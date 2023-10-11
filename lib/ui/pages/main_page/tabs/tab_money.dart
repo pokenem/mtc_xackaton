@@ -2,6 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get_it/get_it.dart';
+import 'package:mtc_xackaton/model/certificate.dart';
+import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 import 'package:mtc_xackaton/ui/widgets/banner.dart';
 
 int nCategories = 4;
@@ -33,7 +36,12 @@ class _TabMoneyState extends State<TabMoney> {
   }
 
   void onBuy() {
-    print("buy");
+    GetIt.I.get<NavigationManager>().openOrderPage(
+          CertificateMoney(
+            groupId: categoryInd.toString(),
+            amount: amount.round(),
+          ),
+        );
   }
 
   @override
@@ -45,7 +53,8 @@ class _TabMoneyState extends State<TabMoney> {
     textController = TextEditingController(text: amount.round().toString());
     textController.addListener(() {
       setState(() {
-        amount = textController.text.isEmpty ? 0 : double.parse(textController.text);
+        amount =
+            textController.text.isEmpty ? 0 : double.parse(textController.text);
       });
     });
   }
@@ -133,7 +142,8 @@ class _TabMoneyState extends State<TabMoney> {
                           LengthLimitingTextInputFormatter(4),
                         ],
                         textAlign: TextAlign.center,
-                        decoration: const InputDecoration.collapsed(hintText: ""),
+                        decoration:
+                            const InputDecoration.collapsed(hintText: ""),
                         cursorColor: const Color(0xFFed1d24),
                         style: const TextStyle(
                           fontFamily: "Arial",

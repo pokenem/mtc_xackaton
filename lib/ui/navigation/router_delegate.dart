@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mtc_xackaton/ui/pages/order_page/order_page.dart';
 
 import '../pages/main_page/main_page.dart';
 import '../pages/my_certificates_page/my_certificates_page.dart';
@@ -27,6 +28,9 @@ class MyRouterDelegate extends RouterDelegate<NavigationState>
     } else if (_state is NavigationStateList) {
       pages.add(const MainPage());
       pages.add(const MyCertificatesPage());
+    } else if (_state is NavigationStateOrder) {
+      pages.add(const MainPage());
+      pages.add(const OrderPage());
     } else {
       pages.add(const MainPage());
     }

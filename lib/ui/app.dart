@@ -15,7 +15,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: "MTS Hackaton",
+      title: "MTS Hackathon",
       routerDelegate: _routerDelegate,
       routeInformationParser: _routeInformationParser,
     );

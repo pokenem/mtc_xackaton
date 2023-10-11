@@ -51,8 +51,8 @@ PreferredSizeWidget createAppBarTabs({
       indicatorColor: Colors.red,
       labelColor: Colors.black,
       tabs: [
-        Tab(text: "Денежный"),
-        Tab(text: "Услуги"),
+        Tab(text: "НОМИНАЛЬНЫЕ"),
+        Tab(text: "НА УСЛУГИ"),
       ],
     ),
   );

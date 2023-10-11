@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 PreferredSizeWidget createAppBar({
   bool hasBackButton = false,
@@ -10,15 +11,23 @@ PreferredSizeWidget createAppBar({
     centerTitle: true,
     title: const Text(
       "Сертификаты",
-      style: TextStyle(color: Colors.black),
+      style: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.w700,
+        fontSize: 20,
+        height: 24 / 20,
+      ),
     ),
     actions: [
       if (hasListButton)
-        const SizedBox(
+        SizedBox(
           height: 51,
           width: 51,
-          child: ColoredBox(
-            color: Colors.red,
+          child: InkWell(
+            child: SvgPicture.asset('assets/sertificate.svg'),
+            onTap: () {
+              //На страницу моих сертификатов
+            },
           ),
         ),
     ],
@@ -35,15 +44,23 @@ PreferredSizeWidget createAppBarTabs({
     centerTitle: true,
     title: const Text(
       "Сертификаты",
-      style: TextStyle(color: Colors.black),
+      style: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.w700,
+        fontSize: 20,
+        height: 24 / 20,
+      ),
     ),
     actions: [
       if (hasListButton)
-        const SizedBox(
+        SizedBox(
           height: 51,
           width: 51,
-          child: ColoredBox(
-            color: Colors.red,
+          child: InkWell(
+            child: SvgPicture.asset('assets/sertificate.svg'),
+            onTap: () {
+              //На страницу моих сертификатов
+            },
           ),
         ),
     ],

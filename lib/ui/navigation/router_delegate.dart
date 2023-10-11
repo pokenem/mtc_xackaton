@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mtc_xackaton/ui/pages/my_sertificates_page/my_certificates_page.dart';
 
 import '../pages/main_page/main_page.dart';
 import 'navigation_state.dart';

@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get_it/get_it.dart';
+import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 
 PreferredSizeWidget createAppBar({
   bool hasBackButton = false,
   bool hasListButton = true,
+  PreferredSizeWidget? bottom,
 }) {
   return AppBar(
     shadowColor: Colors.transparent,
-    backgroundColor: Color(0xFFF7F7F7),
+    backgroundColor: const Color(0xFFF7F7F7),
     centerTitle: true,
     title: const Text(
-      "Сертификаты",
+      'Сертификаты',
       style: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.w700,
@@ -18,59 +21,37 @@ PreferredSizeWidget createAppBar({
         height: 24 / 20,
       ),
     ),
+    leading: hasBackButton ? IconButton(
+      icon: const Icon(Icons.arrow_back, color: Colors.black),
+      onPressed: () {
+        GetIt.I.get<NavigationManager>().pop();
+      },
+    ) : null,
     actions: [
       if (hasListButton)
-        SizedBox(
-          height: 51,
-          width: 51,
-          child: InkWell(
-            child: SvgPicture.asset('assets/sertificate.svg'),
-            onTap: () {
-              //На страницу моих сертификатов
-            },
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: SizedBox(
+            width: 40,
+            height: 50,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Material(
+                child: InkWell(
+                  onTap: () {
+                    GetIt.I.get<NavigationManager>().openMyCertificatesPage();
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    child: SvgPicture.asset('assets/certificate.svg'),
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
+      if (hasListButton) const SizedBox(width: 10),
     ],
-  );
-}
-
-PreferredSizeWidget createAppBarTabs({
-  bool hasBackButton = false,
-  bool hasListButton = true,
-}) {
-  return AppBar(
-    shadowColor: Colors.transparent,
-    backgroundColor: Color(0xFFF7F7F7),
-    centerTitle: true,
-    title: const Text(
-      "Сертификаты",
-      style: TextStyle(
-        color: Colors.black,
-        fontWeight: FontWeight.w700,
-        fontSize: 20,
-        height: 24 / 20,
-      ),
-    ),
-    actions: [
-      if (hasListButton)
-        SizedBox(
-          height: 51,
-          width: 51,
-          child: InkWell(
-            child: SvgPicture.asset('assets/sertificate.svg'),
-            onTap: () {
-              //На страницу моих сертификатов
-            },
-          ),
-        ),
-    ],
-    bottom: const TabBar(
-      indicatorColor: Colors.red,
-      labelColor: Colors.black,
-      tabs: [
-        Tab(text: "НОМИНАЛЬНЫЕ"),
-        Tab(text: "НА УСЛУГИ"),
-      ],
-    ),
+    bottom: bottom,
   );
 }

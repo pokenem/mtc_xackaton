@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 
 import 'navigation/navigation_state.dart';
 import 'navigation/router_delegate.dart';
@@ -10,12 +12,16 @@ class App extends StatelessWidget {
 
   App({super.key})
       : _routerDelegate = MyRouterDelegate(),
-        _routeInformationParser = MyRouteInformationParser();
+        _routeInformationParser = MyRouteInformationParser() {
+    GetIt.I
+        .registerSingleton(NavigationManager(routerDelegate: _routerDelegate));
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: "MTS Hackathon",
+      debugShowCheckedModeBanner: false,
+      title: 'MTS Hackathon',
       routerDelegate: _routerDelegate,
       routeInformationParser: _routeInformationParser,
     );

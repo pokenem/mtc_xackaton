@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mtc_xackaton/ui/pages/my_sertificates_page/my_certificates_page.dart';
 
 import '../pages/main_page/main_page.dart';
+import '../pages/my_certificates_page/my_certificates_page.dart';
 import 'navigation_state.dart';
 
 class MyRouterDelegate extends RouterDelegate<NavigationState>
@@ -22,7 +22,14 @@ class MyRouterDelegate extends RouterDelegate<NavigationState>
   Widget build(BuildContext context) {
     final List<Widget> pages = [];
 
-    pages.add(const MainPage());
+    if (_state is NavigationStateMain) {
+      pages.add(const MainPage());
+    } else if (_state is NavigationStateList) {
+      pages.add(const MainPage());
+      pages.add(const MyCertificatesPage());
+    } else {
+      pages.add(const MainPage());
+    }
 
     // if (_state == null ||
     //     !context.read<TasksRepository>().state.isInitialized) {

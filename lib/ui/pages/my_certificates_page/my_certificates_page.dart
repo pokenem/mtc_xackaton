@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mtc_xackaton/ui/pages/my_sertificates_page/widgets/cerficate_tile.dart';
+
+import 'package:mtc_xackaton/ui/pages/my_certificates_page/widgets/cerficate_tile.dart';
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
 
 class Certificate {
@@ -10,7 +11,12 @@ class Certificate {
   Certificate({this.image, required this.cost, required this.name});
 }
 
-List<Certificate> ser = [Certificate(cost: 10, name: 'НАЗВАНИЕ'),Certificate(cost: 10, name: 'НАЗВАНИЕ'),Certificate(cost: 10, name: 'НАЗВАНИЕ'),Certificate(cost: 10, name: 'НАЗВАНИЕ')];
+List<Certificate> ser = [
+  Certificate(cost: 10, name: 'НАЗВАНИЕ'),
+  Certificate(cost: 10, name: 'НАЗВАНИЕ'),
+  Certificate(cost: 10, name: 'НАЗВАНИЕ'),
+  Certificate(cost: 10, name: 'НАЗВАНИЕ'),
+];
 
 class MyCertificatesPage extends StatelessWidget {
   const MyCertificatesPage({Key? key}) : super(key: key);
@@ -18,18 +24,18 @@ class MyCertificatesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: createAppBar(hasBackButton: false, hasListButton: false),
+      appBar: createAppBar(hasBackButton: true, hasListButton: false),
       body: SafeArea(
         child: ListView(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(top: 40),
                     child: Text(
                       'Ваши сертификаты',
@@ -40,7 +46,8 @@ class MyCertificatesPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  for (dynamic it in ser) CertificateTile(cost: it.cost, name: it.name),
+                  for (dynamic it in ser)
+                    CertificateTile(cost: it.cost, name: it.name),
                 ],
               ),
             ),

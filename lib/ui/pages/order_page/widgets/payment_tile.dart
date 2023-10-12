@@ -34,7 +34,12 @@ class PaymentTile extends StatelessWidget {
               onGoToPay();
             },
             child: ListTile(
-              title: Text(way),
+              title: Text(way,style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 17,
+                fontFamily: 'Arial',
+                height: 16 / 14,
+              ),),
               trailing: SizedBox(
                 width: 33,
                 height: 33,

@@ -33,17 +33,40 @@ class OrderPage extends StatelessWidget {
                 children: [
                   const SizedBox(height: 10),
                   ListTile(
-                    title: Text(cert.title),
-                    trailing: Text('${cert.cost} BYN'),
+                    title: Text(
+                      cert.title,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,
+                        fontFamily: 'Arial',
+                        height: 16 / 14,
+                      ),
+                    ),
+                    trailing: Text(
+                      '${cert.cost} BYN',
+                      style: TextStyle(
+                        fontFamily: 'Arial',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        height: 16 / 14,
+                      ),
+                    ),
                     shape: RoundedRectangleBorder(
-                      side:
-                          const BorderSide(color: Color(0xFFD2D2D2), width: 1),
+                      side: const BorderSide(color: Color(0xFFD2D2D2), width: 1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
                   const Padding(
                     padding: EdgeInsets.only(top: 20),
-                    child: Text('Способ оплаты'),
+                    child: Text(
+                      'Способ оплаты',
+                      style: TextStyle(
+                        fontFamily: 'Arial',
+                        fontSize: 20,
+                        height: 23 / 20,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ),
                   PaymentTile(
                     way: 'Оплата картой',

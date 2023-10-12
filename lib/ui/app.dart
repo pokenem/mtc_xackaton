@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
+import 'package:mtc_xackaton/ui/styles/app_color.dart';
 
 import '../domain/app_cubit.dart';
 import 'navigation/navigation_state.dart';
@@ -35,6 +36,7 @@ class App extends StatelessWidget {
         return appCubit;
       },
       child: MaterialApp.router(
+        color: AppColor.backgroundMain,
         debugShowCheckedModeBanner: false,
         title: 'MTS Hackathon',
         routerDelegate: _routerDelegate,

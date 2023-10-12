@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:mtc_xackaton/model/certificate.dart';
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
 
+import '../../navigation/navigation_manager.dart';
 import '../../styles/app_color.dart';
 
 class CertificateInfoPage extends StatelessWidget {
@@ -11,6 +13,10 @@ class CertificateInfoPage extends StatelessWidget {
     super.key,
     required this.cert,
   });
+
+  void onBuy() {
+    GetIt.I.get<NavMan>().openOrderPage(cert);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +30,14 @@ class CertificateInfoPage extends StatelessWidget {
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   FractionallySizedBox(
                     widthFactor: 1,
                     child: Container(
-                      constraints: BoxConstraints(
+                      constraints: const BoxConstraints(
                         minWidth: double.infinity,
                       ),
                       decoration: BoxDecoration(
@@ -40,11 +46,11 @@ class CertificateInfoPage extends StatelessWidget {
                       child: Image.network(cert.imageLink),
                     ),
                   ),
-                  const SizedBox(
-                    height: 30,
-                  ),
+                  const SizedBox(height: 20),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10,),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                    ),
                     child: Text(
                       cert.name,
                       style: const TextStyle(
@@ -55,9 +61,7 @@ class CertificateInfoPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 10),
                   FractionallySizedBox(
                     widthFactor: 1,
                     child: Padding(
@@ -66,7 +70,7 @@ class CertificateInfoPage extends StatelessWidget {
                       ),
                       child: Text(
                         cert.description,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
                           fontFamily: 'Arial',
@@ -75,9 +79,7 @@ class CertificateInfoPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 30,
-                  ),
+                  const SizedBox(height: 30),
                   FractionallySizedBox(
                     widthFactor: 1,
                     child: ClipRRect(
@@ -85,13 +87,13 @@ class CertificateInfoPage extends StatelessWidget {
                       child: Material(
                         color: AppColor.red,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: onBuy,
                           child: Container(
                             alignment: Alignment.center,
                             height: 45,
-                            child: const Text(
-                              'КУПИТЬ',
-                              style: TextStyle(
+                            child: Text(
+                              'КУПИТЬ (${cert.cost} BYN)',
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'Arial',
                                 fontSize: 16,

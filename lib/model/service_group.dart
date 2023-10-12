@@ -11,4 +11,11 @@ class ServiceGroup {
     required this.name,
     required this.services,
   });
+
+  ServiceGroup.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        name = json['name'],
+        services = (json['sub_services'] as Iterable)
+            .map<CertificateService>((e) => CertificateService.fromJson(e))
+            .toList() {}
 }

@@ -6,6 +6,7 @@ abstract class Certificate {
   const Certificate();
 
   String get title;
+
   int get cost;
 }
 
@@ -43,6 +44,14 @@ class CertificateService extends Certificate {
     required this.imageLink,
     required this.cost,
   });
+
+  CertificateService.fromJson(Map<String, dynamic> json)
+      : cost = int.parse(json['cost']),
+        name = json['name'],
+        description = json['description'],
+        imageLink = json['image'],
+        serviceName = '',
+        serviceId = '' {}
 
   @override
   String get title => name;

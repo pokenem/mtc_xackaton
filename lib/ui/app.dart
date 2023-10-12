@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 import 'package:mtc_xackaton/ui/styles/app_color.dart';
 
+import '../data/api_provider.dart';
 import '../domain/app_cubit.dart';
 import 'navigation/navigation_state.dart';
 import 'navigation/router_delegate.dart';
@@ -18,6 +19,7 @@ class App extends StatelessWidget {
       : _routerDelegate = MyRouterDelegate(),
         _routeInformationParser = MyRouteInformationParser(),
         appCubit = AppCubit() {
+    GetIt.I.registerSingleton(APIProvider());
     GetIt.I.registerSingleton(NavMan(routerDelegate: _routerDelegate));
   }
 
@@ -27,7 +29,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('222');
     return BlocProvider<AppCubit>(
       lazy: false,
       create: (context) {

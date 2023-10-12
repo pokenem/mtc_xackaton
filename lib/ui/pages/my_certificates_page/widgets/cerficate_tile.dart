@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:share/share.dart';
 
 import '../../../assets.dart';
-import '../../../styles/app_color.dart';
 
 class CertificateTile extends StatelessWidget {
   final String title;
@@ -62,14 +61,17 @@ class CertificateTile extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 15, top: 15),
-                        child: Text(
-                          title,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            height: 1,
-                            fontFamily: 'Arial',
-                            letterSpacing: 1.25,
+                        child: SizedBox(
+                          width: 200,
+                          child: Text(
+                            title,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
+                              fontFamily: 'Arial',
+                              letterSpacing: 1.25,
+                            ),
                           ),
                         ),
                       ),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:mtc_xackaton/model/category.dart';
 
 import 'package:mtc_xackaton/ui/pages/my_certificates_page/widgets/cerficate_tile.dart';
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
 
+import '../../../data/api_provider.dart';
 import '../../../model/certificate.dart';
 
 class MyCertificatesPage extends StatefulWidget {
@@ -24,26 +26,11 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
   }
 
   Future<void> load() async {
-    await Future.delayed(const Duration(milliseconds: 200));
+    certs = await GetIt.I.get<APIProvider>().getCertificates('2');
 
     if (!mounted) return;
 
-    setState(() {
-      certs = const [
-        CertificateMoney(
-          category: Category(id: '1', name: 'categ', imageLink: 'https://i.imgur.com/0WCT0md.png'),
-          amount: 123,
-        ),
-        CertificateService(
-          serviceName: 'bybyby',
-          cost: 321,
-          serviceId: '',
-          name: '',
-          description: '',
-          imageLink: 'https://i.imgur.com/0WCT0md.png',
-        ),
-      ];
-    });
+    setState(() {});
   }
 
   @override
@@ -70,7 +57,9 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
                           CertificateTile(
                             title: cert.title,
                             cost: cert.cost,
-                            image: cert is CertificateService ? cert.imageLink : (cert as CertificateMoney).category.imageLink,
+                            image: cert is CertificateService
+                                ? cert.imageLink
+                                : (cert as CertificateMoney).category.imageLink,
                             isShare: true,
                             onTap: () {},
                           ),

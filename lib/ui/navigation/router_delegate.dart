@@ -25,8 +25,6 @@ class MyRouterDelegate extends RouterDelegate<NavigationState>
 
   @override
   Widget build(BuildContext context) {
-    print('build nav');
-    print(_state);
     final List<Widget> pages = [];
 
     if (context.read<AppCubit>().state is AppStateLoading) {

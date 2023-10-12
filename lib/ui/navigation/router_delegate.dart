@@ -1,50 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mtc_xackaton/ui/pages/loading_page/loading_page.dart';
 import 'package:mtc_xackaton/ui/pages/order_page/order_page.dart';
 
+import '../../domain/app_cubit.dart';
 import '../pages/main_page/main_page.dart';
 import '../pages/my_certificates_page/my_certificates_page.dart';
 import 'navigation_state.dart';
 
 class MyRouterDelegate extends RouterDelegate<NavigationState>
-      with ChangeNotifier, PopNavigatorRouterDelegateMixin<NavigationState> {
+    with ChangeNotifier, PopNavigatorRouterDelegateMixin<NavigationState> {
   @override
   final GlobalKey<NavigatorState> navigatorKey;
 
-  MyRouterDelegate() : navigatorKey = GlobalKey<NavigatorState>();
+  MyRouterDelegate()
+      : navigatorKey = GlobalKey<NavigatorState>(),
+        _state = const NavigationStateLoading();
 
-  NavigationState? _state;
+  NavigationState _state;
 
   @override
-  NavigationState get currentConfiguration {
-    return _state ?? const NavigationStateMain(tab: MainTab.money);
-  }
+  NavigationState get currentConfiguration => _state;
 
   @override
   Widget build(BuildContext context) {
+    print('build nav');
+    print(_state);
     final List<Widget> pages = [];
 
-    if (_state is NavigationStateMain) {
-      pages.add(const MainPage());
-    } else if (_state is NavigationStateList) {
-      pages.add(const MainPage());
-      pages.add(const MyCertificatesPage());
-    } else if (_state is NavigationStateOrder) {
-      pages.add(const MainPage());
-      pages.add(const OrderPage());
+    if (context.read<AppCubit>().state is AppStateLoading) {
+      pages.add(const LoadingPage());
     } else {
-      pages.add(const MainPage());
-    }
+      if (_state is NavigationStateMain) {
+        pages.add(const MainPage());
+      } else if (_state is NavigationStateMyCertificates) {
+        pages.add(const MainPage());
+        pages.add(const MyCertificatesPage());
+      } else if (_state is NavigationStateOrder) {
+        NavigationStateOrder state = _state as NavigationStateOrder;
 
-    // if (_state == null ||
-    //     !context.read<TasksRepository>().state.isInitialized) {
-    //   pages.add(LoadPage(nextPage: currentConfiguration));
-    // } else if (_state != null) {
-    //   pages.add(const MainPage());
-    //
-    //   if (_state!.name == Routes.edit) {
-    //     pages.add(EditPage(taskIndex: _state!.taskIndex));
-    //   }
-    // }
+        pages.add(const MainPage());
+        pages.add(OrderPage(cert: state.cert));
+      } else {
+        pages.add(const MainPage());
+      }
+    }
 
     return Navigator(
       key: navigatorKey,
@@ -52,7 +52,7 @@ class MyRouterDelegate extends RouterDelegate<NavigationState>
       onPopPage: (route, result) {
         if (!route.didPop(result)) return false;
 
-        _state = const NavigationStateMain(tab: MainTab.money);
+        _state = const NavigationStateMain();
 
         notifyListeners();
         return true;
@@ -64,5 +64,9 @@ class MyRouterDelegate extends RouterDelegate<NavigationState>
   Future<void> setNewRoutePath(NavigationState configuration) async {
     _state = configuration;
     notifyListeners();
+  }
+
+  Future<void> change(String path) async {
+
   }
 }

@@ -1,31 +1,32 @@
 import '../../model/certificate.dart';
+import '../../model/service_group.dart';
 
 class NavigationState {
   const NavigationState();
 }
 
-enum MainTab { money, service }
-
-class NavigationStateMain extends NavigationState {
-  final MainTab tab;
-
-  const NavigationStateMain({required this.tab});
+class NavigationStateLoading extends NavigationState {
+  const NavigationStateLoading();
 }
 
-class NavigationStateList extends NavigationState {
-  const NavigationStateList();
+class NavigationStateMain extends NavigationState {
+  const NavigationStateMain();
+}
+
+class NavigationStateMyCertificates extends NavigationState {
+  const NavigationStateMyCertificates();
 }
 
 class NavigationStateCertificateInfo extends NavigationState {
-  final String certificateId;
+  final String certId;
 
-  const NavigationStateCertificateInfo({required this.certificateId});
+  const NavigationStateCertificateInfo({required this.certId});
 }
 
 class NavigationStateOrder extends NavigationState {
-  final Certificate certificate;
+  final Certificate cert;
 
-  const NavigationStateOrder({required this.certificate});
+  const NavigationStateOrder({required this.cert});
 }
 
 class NavigationStateAcceptGift extends NavigationState {

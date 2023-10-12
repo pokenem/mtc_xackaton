@@ -11,15 +11,17 @@ class MainPage extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        backgroundColor: const Color(0xFFF7F7F7),
         appBar: createAppBar(
-            bottom: const TabBar(
-          indicatorColor: Colors.red,
-          labelColor: Colors.black,
-          tabs: [
-            Tab(text: 'НОМИНАЛЬНЫЕ'),
-            Tab(text: 'НА УСЛУГИ'),
-          ],
-        )),
+          bottom: const TabBar(
+            indicatorColor: Colors.red,
+            labelColor: Colors.black,
+            tabs: [
+              Tab(text: 'НОМИНАЛЬНЫЕ'),
+              Tab(text: 'НА УСЛУГИ'),
+            ],
+          ),
+        ),
         body: const TabBarView(
           children: [
             TabMoney(),

@@ -3,7 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 
+import '../assets.dart';
+
 PreferredSizeWidget createAppBar({
+  String title = 'Сертификаты',
   bool hasBackButton = false,
   bool hasListButton = true,
   PreferredSizeWidget? bottom,
@@ -12,9 +15,9 @@ PreferredSizeWidget createAppBar({
     shadowColor: Colors.transparent,
     backgroundColor: const Color(0xFFF7F7F7),
     centerTitle: true,
-    title: const Text(
-      'Сертификаты',
-      style: TextStyle(
+    title: Text(
+      title,
+      style: const TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.w700,
         fontSize: 20,
@@ -24,7 +27,7 @@ PreferredSizeWidget createAppBar({
     leading: hasBackButton ? IconButton(
       icon: const Icon(Icons.arrow_back, color: Colors.black),
       onPressed: () {
-        GetIt.I.get<NavigationManager>().pop();
+        GetIt.I.get<NavMan>().pop();
       },
     ) : null,
     actions: [
@@ -37,13 +40,14 @@ PreferredSizeWidget createAppBar({
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Material(
+                color: const Color(0xFFF7F7F7),
                 child: InkWell(
                   onTap: () {
-                    GetIt.I.get<NavigationManager>().openMyCertificatesPage();
+                    GetIt.I.get<NavMan>().openMyCertificatesPage();
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
-                    child: SvgPicture.asset('assets/certificate.svg'),
+                    child: SvgPicture.asset(Assets.certificate),
                   ),
                 ),
               ),

@@ -7,201 +7,6 @@ import 'package:dropdown_textfield/dropdown_textfield.dart';
 import '../../../../domain/app_cubit.dart';
 import '../../../../model/certificate.dart';
 import '../../../../model/service.dart';
-/*
-var map = <String, dynamic>{
-  '1': {
-    "_id": "oierhglihfjwdfd",
-    "name": "PON PON USLUGA",
-    "sub_services": [
-      {
-        "name": "BimBimBamBam",
-        "cost": "150",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "КОНЦЕРТ КИШЛАКА ТУТ",
-        "cost": "300",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "МАРКЕТОЛОГИ ТУТ",
-        "cost": "500",
-        "description": "ДА!!!",
-        "image": "LINK"
-      }
-    ]
-  },
-  '2': {
-    "_id": "oierhglihfjwdfd",
-    "name": "PON PON USLUGA NOMER 2",
-    "sub_services": [
-      {
-        "name": "BimBimBamBam 2",
-        "cost": "150",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
-        "cost": "300",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "МАРКЕТОЛОГИ ТУТ 2",
-        "cost": "500",
-        "description": "ДА!!!",
-        "image": "LINK"
-      }
-    ]
-  },
-  '3': {
-    "_id": "oierhglihfjwdfd",
-    "name": "PON PON USLUGA NOMER 3",
-    "sub_services": [
-      {
-        "name": "BimBimBamBam 2",
-        "cost": "150",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
-        "cost": "300",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "МАРКЕТОЛОГИ ТУТ 2",
-        "cost": "500",
-        "description": "ДА!!!",
-        "image": "LINK"
-      }
-    ]
-  },
-  '4': {
-    "_id": "oierhglihfjwdfd",
-    "name": "PON PON USLUGA NOMER 4",
-    "sub_services": [
-      {
-        "name": "BimBimBamBam 2",
-        "cost": "150",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
-        "cost": "300",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "МАРКЕТОЛОГИ ТУТ 2",
-        "cost": "500",
-        "description": "ДА!!!",
-        "image": "LINK"
-      }
-    ]
-  },
-  '5': {
-    "_id": "oierhglihfjwdfd",
-    "name": "PON PON USLUGA NOMER 5",
-    "sub_services": [
-      {
-        "name": "BimBimBamBam 2",
-        "cost": "150",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
-        "cost": "300",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "МАРКЕТОЛОГИ ТУТ 2",
-        "cost": "500",
-        "description": "ДА!!!",
-        "image": "LINK"
-      }
-    ]
-  },
-  '6': {
-    "_id": "oierhglihfjwdfd",
-    "name": "PON PON USLUGA NOMER 6",
-    "sub_services": [
-      {
-        "name": "BimBimBamBam 2",
-        "cost": "150",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
-        "cost": "300",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "МАРКЕТОЛОГИ ТУТ 2",
-        "cost": "500",
-        "description": "ДА!!!",
-        "image": "LINK"
-      }
-    ]
-  },
-  '7': {
-    "_id": "oierhglihfjwdfd",
-    "name": "PON PON USLUGA NOMER 7",
-    "sub_services": [
-      {
-        "name": "BimBimBamBam 2",
-        "cost": "150",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
-        "cost": "300",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "МАРКЕТОЛОГИ ТУТ 2",
-        "cost": "500",
-        "description": "ДА!!!",
-        "image": "LINK"
-      }
-    ]
-  },
-  '8': {
-    "_id": "oierhglihfjwdfd",
-    "name": "PON PON USLUGA NOMER 8",
-    "sub_services": [
-      {
-        "name": "BimBimBamBam 2",
-        "cost": "150",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
-        "cost": "300",
-        "description": "OGO!",
-        "image": "LINK"
-      },
-      {
-        "name": "МАРКЕТОЛОГИ ТУТ 2",
-        "cost": "500",
-        "description": "ДА!!!",
-        "image": "LINK"
-      }
-    ]
-  },
-};*/
 
 class TabService extends StatefulWidget {
   const TabService({super.key});
@@ -251,36 +56,32 @@ class _TabServiceState extends State<TabService> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FractionallySizedBox(
-                    widthFactor: 1,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(14),
-                        color: Colors.grey,
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: const Color(0xFFD9D9D9)),
+                      color: const Color(0xFFF7F7F7),
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: DropDownTextField(
+                      textFieldDecoration: const InputDecoration(
+                        border: InputBorder.none,
                       ),
-                      child: DropDownTextField(
-                        textStyle: const TextStyle(),
-                        textFieldDecoration: const InputDecoration(
-                          border: InputBorder.none,
-                        ),
-                        controller: _cnt,
-                        clearOption: false,
-
-                        // enableSearch: true,
-                        // dropdownColor: Colors.green,
-                        dropDownItemCount: 6,
-
-                        dropDownList: [
-                          for (ServiceGroup sg in state.services)
-                            DropDownValueModel(
-                              name: sg.name,
-                              value: sg.services,
-                            )
-                        ],
-                        onChanged: (val) {
-                          onChangedDropDown(val);
-                        },
-                      ),
+                      controller: _cnt,
+                      clearOption: false,
+                      dropDownItemCount: state.services.length,
+                      dropDownList: [
+                        for (ServiceGroup sg in state.services)
+                          DropDownValueModel(
+                            name: sg.name,
+                            value: sg.services,
+                          )
+                      ],
+                      onChanged: (val) {
+                        setState(() {
+                          selectedItem = val;
+                        });
+                      },
                     ),
                   ),
                   for (Service service in selectedItem!.value)
@@ -298,24 +99,5 @@ class _TabServiceState extends State<TabService> {
         );
       },
     );
-  }
-
-  void onChangedDropDown(DropDownValueModel item) {
-    setState(() {
-      selectedItem = item;
-      // list = listBuilder(item.value);
-      // print(list);
-    });
-  }
-
-  List<CertificateService> listBuilder(dynamic services) {
-    List<CertificateService> listOfServices = [];
-    for (dynamic it in services) {
-      listOfServices.add(CertificateService(
-          cost: int.parse(it['cost']),
-          groupId: 'fdsfsfwf',
-          serviceId: it['name']));
-    }
-    return listOfServices;
   }
 }

@@ -24,14 +24,14 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
   }
 
   Future<void> load() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(milliseconds: 200));
 
     if (!mounted) return;
 
     setState(() {
       certs = const [
         CertificateMoney(
-          category: Category(id: '1', name: 'categ', imageLink: 'xui'),
+          category: Category(id: '1', name: 'categ', imageLink: 'https://i.imgur.com/0WCT0md.png'),
           amount: 123,
         ),
         CertificateService(
@@ -40,7 +40,7 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
           serviceId: '',
           name: '',
           description: '',
-          imageLink: '',
+          imageLink: 'https://i.imgur.com/0WCT0md.png',
         ),
       ];
     });
@@ -70,10 +70,11 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
                           CertificateTile(
                             title: cert.title,
                             cost: cert.cost,
-                            image: '',
+                            image: cert is CertificateService ? cert.imageLink : (cert as CertificateMoney).category.imageLink,
                             isShare: true,
                             onTap: () {},
                           ),
+                        const SizedBox(height: 20),
                       ],
                     ),
                   ),

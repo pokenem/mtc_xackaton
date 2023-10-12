@@ -1,26 +1,25 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mtc_xackaton/model/certificate.dart';
 
+import '../data/api_provider.dart';
 import '../model/category.dart';
 import '../model/service_group.dart';
 
 part 'app_state.dart';
 
 class AppCubit extends Cubit<AppState> {
+  APIProvider _api = APIProvider();
+
   AppCubit() : super(const AppStateLoading());
 
   Future<void> init() async {
     print('init');
 
-    await Future.delayed(const Duration(seconds: 2));
+    List<Category> categories = await _api.getCategories();
 
     emit(
-      const AppStateLoaded(
-        categories: [
-          Category(id: '1', name: 'ВСЕ', imageLink: 'https://i.imgur.com/0WCT0md.png'),
-          Category(id: '2', name: 'ЧУРКИ', imageLink: 'https://i.imgur.com/0WCT0md.png'),
-          Category(id: '3', name: 'БЕБРЫ', imageLink: 'https://i.imgur.com/0WCT0md.png'),
-        ],
+      AppStateLoaded(
+        categories: categories,
         services: [
           ServiceGroup(
             id: '1',

@@ -41,11 +41,11 @@ class _TabMoneyState extends State<TabMoney> {
 
   void onBuy(AppStateLoaded state) {
     GetIt.I.get<NavMan>().openOrderPage(
-      CertificateMoney(
-        category: state.categories[categoryInd],
-        amount: amount.round(),
-      ),
-    );
+          CertificateMoney(
+            category: state.categories[categoryInd],
+            amount: amount.round(),
+          ),
+        );
   }
 
   @override
@@ -58,7 +58,7 @@ class _TabMoneyState extends State<TabMoney> {
     textController.addListener(() {
       setState(() {
         amount =
-        textController.text.isEmpty ? 0 : double.parse(textController.text);
+            textController.text.isEmpty ? 0 : double.parse(textController.text);
       });
     });
   }
@@ -108,17 +108,20 @@ class _TabMoneyState extends State<TabMoney> {
                 const SizedBox(height: 20),
                 ConstrainedBox(
                   constraints:
-                  BoxConstraints.loose(Size(constraints.maxWidth, 200)),
+                      BoxConstraints.loose(Size(constraints.maxWidth, 250)),
                   child: PageView.builder(
                     controller: pageController,
                     onPageChanged: onChangeCategory,
                     itemCount: state.categories.length,
-                    itemBuilder: (BuildContext context, int index) =>
-                        MyBanner(
-                          child: ColoredBox(
-                            color: Color(state.categories[index].hashCode),
-                          ),
+                    itemBuilder: (BuildContext context, int index) => MyBanner(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(14),
+                          child: Image.network(state.categories[index].imageLink),
                         ),
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -159,7 +162,7 @@ class _TabMoneyState extends State<TabMoney> {
                             ],
                             textAlign: TextAlign.center,
                             decoration:
-                            const InputDecoration.collapsed(hintText: ''),
+                                const InputDecoration.collapsed(hintText: ''),
                             cursorColor: const Color(0xFFed1d24),
                             style: const TextStyle(
                               fontFamily: 'Arial',

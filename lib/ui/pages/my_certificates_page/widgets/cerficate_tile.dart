@@ -45,7 +45,7 @@ class CertificateTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                constraints: BoxConstraints(
+                constraints: const BoxConstraints(
                   minWidth: double.infinity,
                 ),
                 child: Image.network(image),
@@ -77,7 +77,7 @@ class CertificateTile extends StatelessWidget {
                         Align(
                           alignment: Alignment.bottomRight,
                           child: Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               right: 110,
                               bottom: 15,
                             ),
@@ -87,11 +87,11 @@ class CertificateTile extends StatelessWidget {
                               child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
                                   child: Material(
-                                      color: Colors.grey,
+                                      color: Colors.transparent,
                                       child: InkWell(
                                         child: Padding(
                                           padding: const EdgeInsets.all(2),
-                                          child: SvgPicture.asset('assets/gift.svg'),
+                                          child: SvgPicture.asset(Assets.gift),
                                         ),
                                         onTap: () {
                                           Share.share('aboba (Этот текст отправлен из приложения)');
@@ -116,7 +116,7 @@ class CertificateTile extends StatelessWidget {
                                 color: const Color(0xFFBCBCBC),
                               ),
                               child: Center(child: Text('$cost BYN',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 14,
                                 fontFamily: 'Arial',

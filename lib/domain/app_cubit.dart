@@ -1,6 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mtc_xackaton/model/certificate.dart';
 
+import '../model/service_group.dart';
+import '../model/service.dart';
+
 part 'app_state.dart';
 
 class AppCubit extends Cubit<AppState> {
@@ -11,7 +14,25 @@ class AppCubit extends Cubit<AppState> {
 
     await Future.delayed(const Duration(seconds: 2));
 
-    emit(const AppStateMainPage());
+    emit(
+      const AppStateLoaded(
+        categories: ['ВСЕ КАТЕГОРИИ', 'БЕБЕБЕ', 'ЧУРКИ'],
+        services: [
+          ServiceGroup(
+            id: '1',
+            name: '2',
+            services: [
+              Service(
+                name: 'bim bim',
+                description: 'bam bam',
+                cost: 120,
+                imageLink: 'hui',
+              ),
+            ],
+          )
+        ],
+      ),
+    );
   }
 
   Future<void> butCertificate(Certificate cert) async {

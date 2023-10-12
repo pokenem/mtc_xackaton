@@ -12,11 +12,11 @@ class NavMan {
 
   void openMainPage() {
     _routerDelegate
-        .setNewRoutePath(const NavigationStateMain(tab: MainTab.money));
+        .setNewRoutePath(const NavigationStateMain());
   }
 
   void openMyCertificatesPage() {
-    _routerDelegate.setNewRoutePath(const NavigationStateList());
+    _routerDelegate.setNewRoutePath(const NavigationStateMyCertificates());
   }
 
   void openOrderPage(Certificate certificate) {

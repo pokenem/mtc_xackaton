@@ -1,4 +1,5 @@
 import '../../model/certificate.dart';
+import '../../model/service_group.dart';
 
 class NavigationState {
   const NavigationState();
@@ -8,16 +9,12 @@ class NavigationStateLoading extends NavigationState {
   const NavigationStateLoading();
 }
 
-enum MainTab { money, service }
-
 class NavigationStateMain extends NavigationState {
-  final MainTab tab;
-
-  const NavigationStateMain({required this.tab});
+  const NavigationStateMain();
 }
 
-class NavigationStateList extends NavigationState {
-  const NavigationStateList();
+class NavigationStateMyCertificates extends NavigationState {
+  const NavigationStateMyCertificates();
 }
 
 class NavigationStateCertificateInfo extends NavigationState {

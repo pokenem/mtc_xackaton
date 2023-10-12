@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -12,7 +11,7 @@ class LoadingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<AppCubit, AppState>(
       listener: (context, state) {
-        if (state is! AppStateLoading) {
+        if (state is AppStateLoaded) {
           GetIt.I.get<NavMan>().openMainPage();
         }
       },

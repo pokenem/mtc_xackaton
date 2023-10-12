@@ -8,20 +8,9 @@ class AppStateLoading extends AppState {
   const AppStateLoading();
 }
 
-class AppStateMainPage extends AppState {
-  const AppStateMainPage();
-}
+class AppStateLoaded extends AppState {
+  final List<String> categories;
+  final List<ServiceGroup> services;
 
-class AppStateOrderPage extends AppState {
-  final Certificate cert;
-
-  const AppStateOrderPage({required this.cert});
-}
-
-class AppStateMyCertificatesPage extends AppState {
-  const AppStateMyCertificatesPage();
-}
-
-class AppStateCertificateInfoPage extends AppState {
-  const AppStateCertificateInfoPage();
+  const AppStateLoaded({required this.categories, required this.services});
 }

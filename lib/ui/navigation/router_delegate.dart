@@ -33,7 +33,7 @@ class MyRouterDelegate extends RouterDelegate<NavigationState>
     } else {
       if (_state is NavigationStateMain) {
         pages.add(const MainPage());
-      } else if (_state is NavigationStateList) {
+      } else if (_state is NavigationStateMyCertificates) {
         pages.add(const MainPage());
         pages.add(const MyCertificatesPage());
       } else if (_state is NavigationStateOrder) {
@@ -46,24 +46,13 @@ class MyRouterDelegate extends RouterDelegate<NavigationState>
       }
     }
 
-    // if (_state == null ||
-    //     !context.read<TasksRepository>().state.isInitialized) {
-    //   pages.add(LoadPage(nextPage: currentConfiguration));
-    // } else if (_state != null) {
-    //   pages.add(const MainPage());
-    //
-    //   if (_state!.name == Routes.edit) {
-    //     pages.add(EditPage(taskIndex: _state!.taskIndex));
-    //   }
-    // }
-
     return Navigator(
       key: navigatorKey,
       pages: pages.map<Page>((page) => MaterialPage(child: page)).toList(),
       onPopPage: (route, result) {
         if (!route.didPop(result)) return false;
 
-        _state = const NavigationStateMain(tab: MainTab.money);
+        _state = const NavigationStateMain();
 
         notifyListeners();
         return true;
@@ -75,5 +64,9 @@ class MyRouterDelegate extends RouterDelegate<NavigationState>
   Future<void> setNewRoutePath(NavigationState configuration) async {
     _state = configuration;
     notifyListeners();
+  }
+
+  Future<void> change(String path) async {
+
   }
 }

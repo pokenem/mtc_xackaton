@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:share/share.dart';
 
 import '../../../assets.dart';
+import '../../../styles/app_color.dart';
 
 class CertificateTile extends StatelessWidget {
   final String title;
@@ -40,25 +41,16 @@ class CertificateTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(14),
             color: const Color(0xFFD9D9D9),
           ),
-          height: 250,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 180,
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: NetworkImage(image),
-                    ),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(14),
-                      topRight: Radius.circular(14),
-                    ),
-                  ),
+              Container(
+                constraints: BoxConstraints(
+                  minWidth: double.infinity,
                 ),
+                child: Image.network(image),
               ),
+
               //Image
               SizedBox(
                 height: 70,
@@ -76,6 +68,8 @@ class CertificateTile extends StatelessWidget {
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
                             height: 1,
+                            fontFamily: 'Arial',
+                            letterSpacing: 1.25,
                           ),
                         ),
                       ),
@@ -119,9 +113,15 @@ class CertificateTile extends StatelessWidget {
                             child: DecoratedBox(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
-                                color: const Color(0xFFD2D2D2),
+                                color: const Color(0xFFBCBCBC),
                               ),
-                              child: Center(child: Text('$cost BYN')),
+                              child: Center(child: Text('$cost BYN',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                                fontFamily: 'Arial',
+                                height: 16 / 14,
+                              ),)),
                             ),
                           ),
                         ),

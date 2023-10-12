@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:mtc_xackaton/model/certificate.dart';
 import 'package:mtc_xackaton/model/service_group.dart';
+import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 import 'package:mtc_xackaton/ui/pages/my_certificates_page/widgets/cerficate_tile.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 
 import '../../../../domain/app_cubit.dart';
-import '../../../../model/certificate.dart';
-import '../../../../model/service.dart';
 
 class TabService extends StatefulWidget {
   const TabService({super.key});
@@ -21,9 +22,9 @@ class _TabServiceState extends State<TabService> {
 
   @override
   void initState() {
-    _cnt = SingleValueDropDownController();
-
     super.initState();
+    
+    _cnt = SingleValueDropDownController();
   }
 
   @override
@@ -58,7 +59,7 @@ class _TabServiceState extends State<TabService> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(14),
                       border: Border.all(color: const Color(0xFFD9D9D9)),
                       color: const Color(0xFFF7F7F7),
                     ),
@@ -66,6 +67,20 @@ class _TabServiceState extends State<TabService> {
                     child: DropDownTextField(
                       textFieldDecoration: const InputDecoration(
                         border: InputBorder.none,
+                      ),
+                      textStyle: const TextStyle(
+                        fontFamily: 'Arial',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.1,
+                        height: 16 / 13,
+                      ),
+                      listTextStyle: const TextStyle(
+                        fontFamily: 'Arial',
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700,
+                        height: 1,
+
                       ),
                       controller: _cnt,
                       clearOption: false,
@@ -84,13 +99,15 @@ class _TabServiceState extends State<TabService> {
                       },
                     ),
                   ),
-                  for (Service service in selectedItem!.value)
+                  for (CertificateService cert in selectedItem!.value)
                     CertificateTile(
-                      cost: service.cost,
-                      title: service.name,
+                      cost: cert.cost,
+                      title: cert.name,
                       isShare: false,
                       image: 'https://i.imgur.com/0WCT0md.png',
-                      onTap: () {},
+                      onTap: () {
+                        GetIt.I.get<NavMan>().openCertificateInfoPage(cert);
+                      },
                     ),
                 ],
               ),

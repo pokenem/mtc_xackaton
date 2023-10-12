@@ -3,7 +3,6 @@ import 'package:mtc_xackaton/model/certificate.dart';
 
 import '../model/category.dart';
 import '../model/service_group.dart';
-import '../model/service.dart';
 
 part 'app_state.dart';
 
@@ -27,11 +26,13 @@ class AppCubit extends Cubit<AppState> {
             id: '1',
             name: 'Бебебе',
             services: [
-              Service(
+              CertificateService(
                 name: 'bim bim',
                 description: 'bam bam',
                 cost: 120,
                 imageLink: 'hui',
+                serviceName: '',
+                serviceId: '1',
               ),
             ],
           ),
@@ -39,11 +40,13 @@ class AppCubit extends Cubit<AppState> {
             id: '2',
             name: 'Бабаба',
             services: [
-              Service(
+              CertificateService(
                 name: 'bam bam',
                 description: 'bam bam',
                 cost: 120,
                 imageLink: 'hui',
+                serviceName: '',
+                serviceId: '2',
               ),
             ],
           )

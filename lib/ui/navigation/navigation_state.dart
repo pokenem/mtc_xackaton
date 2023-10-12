@@ -1,5 +1,4 @@
 import '../../model/certificate.dart';
-import '../../model/service_group.dart';
 
 class NavigationState {
   const NavigationState();
@@ -18,9 +17,9 @@ class NavigationStateMyCertificates extends NavigationState {
 }
 
 class NavigationStateCertificateInfo extends NavigationState {
-  final String certId;
+  final CertificateService cert;
 
-  const NavigationStateCertificateInfo({required this.certId});
+  const NavigationStateCertificateInfo({required this.cert});
 }
 
 class NavigationStateOrder extends NavigationState {

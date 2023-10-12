@@ -1,10 +1,10 @@
-import 'service.dart';
+import 'package:mtc_xackaton/model/certificate.dart';
 
 class ServiceGroup {
   final String id;
   final String name;
 
-  final List<Service> services;
+  final List<CertificateService> services;
 
   const ServiceGroup({
     required this.id,

@@ -11,17 +11,20 @@ class NavMan {
   }) : _routerDelegate = routerDelegate;
 
   void openMainPage() {
-    _routerDelegate
-        .setNewRoutePath(const NavigationStateMain());
+    _routerDelegate.setNewRoutePath(const NavigationStateMain());
   }
 
   void openMyCertificatesPage() {
     _routerDelegate.setNewRoutePath(const NavigationStateMyCertificates());
   }
 
-  void openOrderPage(Certificate certificate) {
+  void openOrderPage(Certificate cert) {
+    _routerDelegate.setNewRoutePath(NavigationStateOrder(cert: cert));
+  }
+
+  void openCertificateInfoPage(CertificateService cert) {
     _routerDelegate
-        .setNewRoutePath(NavigationStateOrder(cert: certificate));
+        .setNewRoutePath(NavigationStateCertificateInfo(cert: cert));
   }
 
   void pop() {

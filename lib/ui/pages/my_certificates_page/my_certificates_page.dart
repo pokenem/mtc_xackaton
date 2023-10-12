@@ -34,7 +34,14 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
           category: Category(id: '1', name: 'categ', imageLink: 'xui'),
           amount: 123,
         ),
-        CertificateService(groupId: 'bababa', serviceId: 'bybyby', cost: 321),
+        CertificateService(
+          serviceName: 'bybyby',
+          cost: 321,
+          serviceId: '',
+          name: '',
+          description: '',
+          imageLink: '',
+        ),
       ];
     });
   }

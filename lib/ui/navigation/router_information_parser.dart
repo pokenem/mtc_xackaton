@@ -22,12 +22,24 @@ class MyRouteInformationParser extends RouteInformationParser<NavigationState> {
         return const NavigationStateMyCertificates();
       }
     } else if (uri.pathSegments.length == 2) {
-      if (uri.pathSegments[0] == 'certificateInfo') {
-        return NavigationStateCertificateInfo(certId: uri.pathSegments[1]);
-      } else if (uri.pathSegments[0] == 'gift') {
+      if (uri.pathSegments[0] == 'gift') {
         return NavigationStateAcceptGift(giftId: uri.pathSegments[1]);
       }
     }
+    /*else if (uri.pathSegments.length == 3) {
+      if (uri.pathSegments[0] == 'certificateInfo') {
+        return NavigationStateCertificateInfo(
+          cert: CertificateService(
+            serviceName: '',
+            serviceId: uri.pathSegments[1],
+            name: uri.pathSegments[2],
+            description: '',
+            imageLink: '',
+            cost: 0,
+          ),
+        );
+      }
+    }*/
 
     return const NavigationStateMain();
   }
@@ -39,13 +51,16 @@ class MyRouteInformationParser extends RouteInformationParser<NavigationState> {
     } else if (configuration is NavigationStateMyCertificates) {
       return const RouteInformation(location: '/myCertificates');
     } else if (configuration is NavigationStateCertificateInfo) {
-      NavigationStateCertificateInfo state = configuration;
+      // NavigationStateCertificateInfo state = configuration;
 
-      return RouteInformation(location: '/certificateInfo/${state.certId}');
+      return const RouteInformation(location: '/');
+      // return RouteInformation(
+      //     location:
+      //         '/certificateInfo/${state.cert.serviceId}/${state.cert.name}');
     } else if (configuration is NavigationStateAcceptGift) {
       NavigationStateAcceptGift state = configuration;
 
-      return RouteInformation(location: '/certificateInfo/${state.giftId}');
+      return RouteInformation(location: '/acceptGift/${state.giftId}');
     }
 
     return const RouteInformation(location: '/');

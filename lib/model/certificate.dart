@@ -26,18 +26,24 @@ class CertificateMoney extends Certificate {
 }
 
 class CertificateService extends Certificate {
-  final String groupId;
+  final String serviceName;
   final String serviceId;
+  final String name;
+  final String description;
+  final String imageLink;
 
   @override
   final int cost;
 
   const CertificateService({
-    required this.groupId,
+    required this.serviceName,
     required this.serviceId,
+    required this.name,
+    required this.description,
+    required this.imageLink,
     required this.cost,
   });
 
   @override
-  String get title => serviceId;
+  String get title => name;
 }

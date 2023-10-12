@@ -25,9 +25,7 @@ class CertificateTile extends StatelessWidget {
     return isShare
         ? tile()
         : GestureDetector(
-            onTap: () {
-              print('aboba');
-            },
+            onTap: onTap,
             child: tile(),
           );
   }

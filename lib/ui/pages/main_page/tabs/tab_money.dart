@@ -9,6 +9,7 @@ import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 import 'package:mtc_xackaton/ui/widgets/banner.dart';
 
 import '../../../../domain/app_cubit.dart';
+import '../../../styles/app_color.dart';
 
 int nCategories = 4;
 List<String> categories = [
@@ -87,7 +88,7 @@ class _TabMoneyState extends State<TabMoney> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
                       border: Border.all(color: const Color(0xFFD9D9D9)),
-                      color: const Color(0xFFF7F7F7),
+                      color: AppColor.backgroundMain,
                     ),
                     alignment: Alignment.center,
                     height: 45,
@@ -97,6 +98,9 @@ class _TabMoneyState extends State<TabMoney> {
                         color: Colors.black,
                         fontFamily: 'Arial',
                         fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.25,
+                        height: 16 / 13,
                       ),
                     ),
                   ),
@@ -137,6 +141,9 @@ class _TabMoneyState extends State<TabMoney> {
                               color: Colors.black,
                               fontFamily: 'Arial',
                               fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
+                              letterSpacing: 1.25,
                             ),
                           ),
                         ),
@@ -196,9 +203,12 @@ class _TabMoneyState extends State<TabMoney> {
                           child: const Text(
                             'КУПИТЬ',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: AppColor.white,
                               fontFamily: 'Arial',
                               fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
+                              letterSpacing: 1.25,
                             ),
                           ),
                         ),

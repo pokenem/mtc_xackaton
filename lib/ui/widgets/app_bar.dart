@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 
 import '../assets.dart';
+import '../styles/app_color.dart';
 
 PreferredSizeWidget createAppBar({
   String title = 'Сертификаты',
@@ -18,14 +19,14 @@ PreferredSizeWidget createAppBar({
     title: Text(
       title,
       style: const TextStyle(
-        color: Colors.black,
+        color: AppColor.black,
         fontWeight: FontWeight.w700,
         fontSize: 20,
         height: 24 / 20,
       ),
     ),
     leading: hasBackButton ? IconButton(
-      icon: const Icon(Icons.arrow_back, color: Colors.black),
+      icon: const Icon(Icons.arrow_back, color: AppColor.black),
       onPressed: () {
         GetIt.I.get<NavMan>().pop();
       },

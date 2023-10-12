@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 
+import '../assets.dart';
+
 PreferredSizeWidget createAppBar({
   String title = 'Сертификаты',
   bool hasBackButton = false,
@@ -45,7 +47,7 @@ PreferredSizeWidget createAppBar({
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
-                    child: SvgPicture.asset('assets/certificate.svg'),
+                    child: SvgPicture.asset(Assets.certificate),
                   ),
                 ),
               ),

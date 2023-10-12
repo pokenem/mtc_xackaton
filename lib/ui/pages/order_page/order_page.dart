@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mtc_xackaton/model/certificate.dart';
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
 
+import '../../assets.dart';
 import 'widgets/payment_tile.dart';
 
 class OrderPage extends StatelessWidget {
@@ -46,15 +47,15 @@ class OrderPage extends StatelessWidget {
                   ),
                   PaymentTile(
                     way: 'Оплата картой',
-                    image: SvgPicture.asset('assets/web_pay.svg'),
+                    image: Image.asset(Assets.card),
                   ),
                   PaymentTile(
                     way: 'Оплата через МТС деньги',
-                    image: SvgPicture.asset('assets/mts_money.svg'),
+                    image: Image.asset(Assets.wallet),
                   ),
                   PaymentTile(
                     way: 'Оплата ЕРИП',
-                    image: SvgPicture.asset('assets/erip_pay.svg'),
+                    image: Image.asset(Assets.erip),
                   ),
                 ],
               ),

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mtc_xackaton/model/certificate.dart';
+
+import '../../../assets.dart';
 
 class CertificateTile extends StatelessWidget {
   final String title;
   final int cost;
   final void Function() onTap;
 
-  CertificateTile({
+  const CertificateTile({
     super.key,
     required this.title,
     required this.cost,
@@ -73,11 +74,7 @@ class CertificateTile extends StatelessWidget {
                             width: 30,
                             child: InkWell(
                               onTap: onTap,
-                              child: SvgPicture.asset('assets/gift.svg'),
-                              //   () {
-                              //   Share.share(
-                              //       'aboba (Этот текст отправлен из приложения)');
-                              // },
+                              child: SvgPicture.asset(Assets.gift),
                             ),
                           ),
                         ),

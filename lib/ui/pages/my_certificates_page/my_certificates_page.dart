@@ -42,6 +42,7 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF7F7F7),
       appBar: createAppBar(
         title: 'Мои сертификаты',
         hasBackButton: true,

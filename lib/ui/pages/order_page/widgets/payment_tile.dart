@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PaymentTile extends StatelessWidget {
   final String way;
-  final SvgPicture image;
+  final Widget image;
 
-  const PaymentTile({super.key, required this.way, required this.image});
+  const PaymentTile({
+    super.key,
+    required this.way,
+    required this.image,
+  });
 
   void onGoToPay() async {
     final uri = Uri.parse(

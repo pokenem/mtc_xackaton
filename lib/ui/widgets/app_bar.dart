@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 
 PreferredSizeWidget createAppBar({
+  String title = 'Сертификаты',
   bool hasBackButton = false,
   bool hasListButton = true,
   PreferredSizeWidget? bottom,
@@ -12,9 +13,9 @@ PreferredSizeWidget createAppBar({
     shadowColor: Colors.transparent,
     backgroundColor: const Color(0xFFF7F7F7),
     centerTitle: true,
-    title: const Text(
-      'Сертификаты',
-      style: TextStyle(
+    title: Text(
+      title,
+      style: const TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.w700,
         fontSize: 20,

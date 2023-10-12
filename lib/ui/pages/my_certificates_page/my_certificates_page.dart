@@ -42,7 +42,11 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: createAppBar(hasBackButton: true, hasListButton: false),
+      appBar: createAppBar(
+        title: 'Мои сертификаты',
+        hasBackButton: true,
+        hasListButton: false,
+      ),
       body: SafeArea(
         child: certs != null
             ? ListView(
@@ -54,17 +58,6 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.only(top: 40),
-                          child: Text(
-                            'Ваши сертификаты',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700,
-                              height: 23 / 20,
-                            ),
-                          ),
-                        ),
                         for (Certificate cert in certs!)
                           CertificateTile(
                             title: cert.title,

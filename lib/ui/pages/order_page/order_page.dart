@@ -15,7 +15,11 @@ class OrderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF7F7F7),
-      appBar: createAppBar(hasBackButton: true, hasListButton: false),
+      appBar: createAppBar(
+        title: 'Оформление покупки',
+        hasBackButton: true,
+        hasListButton: false,
+      ),
       body: SafeArea(
         child: ListView(
           children: [
@@ -26,13 +30,7 @@ class OrderPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      top: 40,
-                      bottom: 11,
-                    ),
-                    child: Text('Оформление покупки'),
-                  ),
+                  const SizedBox(height: 10),
                   ListTile(
                     title: Text(cert.title),
                     trailing: Text('${cert.cost} BYN'),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:gif/gif.dart';
 import 'package:mtc_xackaton/domain/app_cubit.dart';
 import 'package:mtc_xackaton/ui/navigation/navigation_manager.dart';
 
@@ -18,10 +19,12 @@ class LoadingPage extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return const Scaffold(
+        return Scaffold(
           body: Center(
-            child: CircularProgressIndicator(
-              color: Color(0xFFE30611),
+            child: Gif(
+              autostart: Autostart.loop,
+              image: const AssetImage('assets/gif.gif'),
+              width: 115,
             ),
           ),
         );

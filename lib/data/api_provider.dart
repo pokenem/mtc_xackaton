@@ -16,10 +16,11 @@ class APIProvider {
   Future<List<Category>> getCategories() async {
     Response resp = await _dio.get('$baseUrl/category');
 
-    return (resp.data['list'] as Iterable<dynamic>)
-        .where((e) => e['name'] != 'Все' || e['sum'] == -1)
+    List<Category> res = (resp.data['list'] as Iterable<dynamic>)
         .map<Category>((e) => Category.fromJson(e))
         .toList();
+    res.sort((a, b) => int.parse(a.id) - int.parse(b.id));
+    return res;
   }
 
   Future<List<ServiceGroup>> getServices() async {

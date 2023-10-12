@@ -47,7 +47,7 @@ class MyCertificatesPage extends StatelessWidget {
                     ),
                   ),
                   for (dynamic it in ser)
-                    CertificateTile(cost: it.cost, name: it.name),
+                    CertificateTile(cost: it.cost, name: it.name, isShare: true, image: 'https://i.imgur.com/0WCT0md.png',),
                 ],
               ),
             ),

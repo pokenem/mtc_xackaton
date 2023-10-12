@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mtc_xackaton/ui/pages/main_page/tabs/tab_money.dart';
+import 'package:mtc_xackaton/ui/pages/main_page/tabs/tab_service.dart';
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
 
 class MainPage extends StatelessWidget {
@@ -22,7 +23,7 @@ class MainPage extends StatelessWidget {
         body: const TabBarView(
           children: [
             TabMoney(),
-            Placeholder(),
+            TabService(),
           ],
         ),
       ),

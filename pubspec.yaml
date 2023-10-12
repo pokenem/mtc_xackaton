@@ -17,6 +17,7 @@ dependencies:
   share: ^2.0.4
   url_launcher: ^6.1.14
   get_it: ^7.6.4
+  dropdown_textfield: ^1.0.8
 
 dev_dependencies:
   flutter_test:

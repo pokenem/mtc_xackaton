@@ -1,31 +1,43 @@
+import 'category.dart';
+
 enum CertificateType { money, service }
 
-class Certificate {
-  final CertificateType type;
+abstract class Certificate {
+  const Certificate();
 
-  const Certificate({
-    required this.type,
-  });
+  String get title;
+  int get cost;
 }
 
 class CertificateMoney extends Certificate {
-  final String groupId;
+  final Category category;
   final int amount;
 
   const CertificateMoney({
-    required this.groupId,
+    required this.category,
     required this.amount,
-  }) : super(type: CertificateType.money);
+  });
+
+  @override
+  int get cost => amount;
+
+  @override
+  String get title => category.name;
 }
 
 class CertificateService extends Certificate {
   final String groupId;
   final String serviceId;
+
+  @override
   final int cost;
 
   const CertificateService({
     required this.groupId,
     required this.serviceId,
     required this.cost,
-  }) : super(type: CertificateType.money);
+  });
+
+  @override
+  String get title => serviceId;
 }

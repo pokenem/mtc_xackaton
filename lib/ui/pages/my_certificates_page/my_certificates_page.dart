@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mtc_xackaton/model/category.dart';
 
 import 'package:mtc_xackaton/ui/pages/my_certificates_page/widgets/cerficate_tile.dart';
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
@@ -25,9 +26,14 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
   Future<void> load() async {
     await Future.delayed(const Duration(seconds: 2));
 
+    if (!mounted) return;
+
     setState(() {
       certs = const [
-        CertificateMoney(groupId: 'bebebe', amount: 123),
+        CertificateMoney(
+          category: Category(id: '1', name: 'categ', imageLink: 'xui'),
+          amount: 123,
+        ),
         CertificateService(groupId: 'bababa', serviceId: 'bybyby', cost: 321),
       ];
     });
@@ -60,17 +66,11 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
                           ),
                         ),
                         for (Certificate cert in certs!)
-                          cert is CertificateMoney
-                              ? CertificateTile(
-                                  title: cert.groupId,
-                                  cost: cert.amount,
-                                  onTap: () {},
-                                )
-                              : CertificateTile(
-                                  title: (cert as CertificateService).serviceId,
-                                  cost: cert.cost,
-                                  onTap: () {},
-                                ),
+                          CertificateTile(
+                            title: cert.title,
+                            cost: cert.cost,
+                            onTap: () {},
+                          ),
                       ],
                     ),
                   ),

@@ -9,7 +9,7 @@ class AppStateLoading extends AppState {
 }
 
 class AppStateLoaded extends AppState {
-  final List<String> categories;
+  final List<Category> categories;
   final List<ServiceGroup> services;
 
   const AppStateLoaded({required this.categories, required this.services});

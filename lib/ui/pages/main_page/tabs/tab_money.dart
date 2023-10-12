@@ -38,10 +38,10 @@ class _TabMoneyState extends State<TabMoney> {
     });
   }
 
-  void onBuy(BuildContext context) {
+  void onBuy(AppStateLoaded state) {
     GetIt.I.get<NavMan>().openOrderPage(
       CertificateMoney(
-        groupId: categoryInd.toString(),
+        category: state.categories[categoryInd],
         amount: amount.round(),
       ),
     );
@@ -92,7 +92,7 @@ class _TabMoneyState extends State<TabMoney> {
                     alignment: Alignment.center,
                     height: 45,
                     child: Text(
-                      state.categories[categoryInd],
+                      state.categories[categoryInd].name,
                       style: const TextStyle(
                         color: Colors.black,
                         fontFamily: 'Arial',
@@ -189,7 +189,7 @@ class _TabMoneyState extends State<TabMoney> {
                     child: Material(
                       color: const Color(0xFFed1d24),
                       child: InkWell(
-                        onTap: () => onBuy(context),
+                        onTap: () => onBuy(state),
                         child: Container(
                           alignment: Alignment.center,
                           height: 45,

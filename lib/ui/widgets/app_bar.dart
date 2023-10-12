@@ -37,6 +37,7 @@ PreferredSizeWidget createAppBar({
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Material(
+                color: const Color(0xFFF7F7F7),
                 child: InkWell(
                   onTap: () {
                     GetIt.I.get<NavMan>().openMyCertificatesPage();

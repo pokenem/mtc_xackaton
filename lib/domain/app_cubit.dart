@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mtc_xackaton/model/certificate.dart';
 
+import '../model/category.dart';
 import '../model/service_group.dart';
 import '../model/service.dart';
 
@@ -16,7 +17,11 @@ class AppCubit extends Cubit<AppState> {
 
     emit(
       const AppStateLoaded(
-        categories: ['ВСЕ КАТЕГОРИИ', 'БЕБЕБЕ', 'ЧУРКИ'],
+        categories: [
+          Category(id: '1', name: 'ВСЕ', imageLink: 'xui'),
+          Category(id: '2', name: 'ЧУРКИ', imageLink: 'xui'),
+          Category(id: '3', name: 'БЕБРЫ', imageLink: 'xui'),
+        ],
         services: [
           ServiceGroup(
             id: '1',

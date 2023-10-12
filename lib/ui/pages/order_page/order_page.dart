@@ -34,8 +34,8 @@ class OrderPage extends StatelessWidget {
                     child: Text('Оформление покупки'),
                   ),
                   ListTile(
-                    title: const Text('Название'),
-                    trailing: const Text('sum'),
+                    title: Text(cert.title),
+                    trailing: Text('${cert.cost} BYN'),
                     shape: RoundedRectangleBorder(
                       side:
                           const BorderSide(color: Color(0xFFD2D2D2), width: 1),

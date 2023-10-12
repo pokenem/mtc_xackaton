@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:share/share.dart';
+import 'package:mtc_xackaton/model/certificate.dart';
 
 class CertificateTile extends StatelessWidget {
+  final String title;
   final int cost;
-  final String name;
+  final void Function() onTap;
 
-  const CertificateTile({
-    Key? key,
+  CertificateTile({
+    super.key,
+    required this.title,
     required this.cost,
-    required this.name,
-  }) : super(key: key);
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 15),
+      padding: const EdgeInsets.only(top: 15),
       child: FractionallySizedBox(
         widthFactor: 1,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
-            color: Color(0xFFD9D9D9),
+            color: const Color(0xFFD9D9D9),
           ),
           height: 250,
           child: Column(
@@ -30,7 +32,7 @@ class CertificateTile extends StatelessWidget {
               SizedBox(
                 height: 180,
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(14),
                       topRight: Radius.circular(14),
@@ -49,10 +51,10 @@ class CertificateTile extends StatelessWidget {
                   child: Stack(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 15, top: 15),
+                        padding: const EdgeInsets.only(left: 15, top: 15),
                         child: Text(
-                          name,
-                          style: TextStyle(
+                          title,
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
                             height: 1,
@@ -62,21 +64,28 @@ class CertificateTile extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomRight,
                         child: Padding(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                             right: 110,
                             bottom: 15,
                           ),
                           child: SizedBox(
                             height: 30,
                             width: 30,
-                            child: InkWell(child: SvgPicture.asset('assets/gift.svg'),onTap: (){Share.share('aboba (Этот текст отправлен из приложения)');},),
+                            child: InkWell(
+                              onTap: onTap,
+                              child: SvgPicture.asset('assets/gift.svg'),
+                              //   () {
+                              //   Share.share(
+                              //       'aboba (Этот текст отправлен из приложения)');
+                              // },
+                            ),
                           ),
                         ),
                       ),
                       Align(
                         alignment: Alignment.bottomRight,
                         child: Padding(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                             right: 15,
                             bottom: 15,
                           ),
@@ -86,7 +95,7 @@ class CertificateTile extends StatelessWidget {
                             child: DecoratedBox(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
-                                color: Color(0xFFD2D2D2),
+                                color: const Color(0xFFD2D2D2),
                               ),
                               child: Center(child: Text('$cost BYN')),
                             ),

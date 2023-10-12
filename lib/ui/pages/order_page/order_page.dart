@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mtc_xackaton/model/certificate.dart';
 
+import 'package:mtc_xackaton/model/certificate.dart';
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
 
 import 'widgets/payment_tile.dart';

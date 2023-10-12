@@ -1,22 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:share/share.dart';
 
 import '../../../assets.dart';
 
 class CertificateTile extends StatelessWidget {
   final String title;
   final int cost;
+  final bool isShare;
+  final String image;
   final void Function() onTap;
 
   const CertificateTile({
     super.key,
     required this.title,
     required this.cost,
+    required this.isShare,
+    required this.image,
     required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
+    return isShare
+        ? tile()
+        : GestureDetector(
+            onTap: () {
+              print('aboba');
+            },
+            child: tile(),
+          );
+  }
+
+  Widget tile() {
     return Padding(
       padding: const EdgeInsets.only(top: 15),
       child: FractionallySizedBox(
@@ -33,12 +49,15 @@ class CertificateTile extends StatelessWidget {
               SizedBox(
                 height: 180,
                 child: Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: NetworkImage(image),
+                    ),
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(14),
                       topRight: Radius.circular(14),
                     ),
-                    color: Colors.black,
                   ),
                 ),
               ),
@@ -62,23 +81,33 @@ class CertificateTile extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            right: 110,
-                            bottom: 15,
-                          ),
-                          child: SizedBox(
-                            height: 30,
-                            width: 30,
-                            child: InkWell(
-                              onTap: onTap,
-                              child: SvgPicture.asset(Assets.gift),
+                      if (isShare)
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              right: 110,
+                              bottom: 15,
+                            ),
+                            child: SizedBox(
+                              height: 35,
+                              width: 35,
+                              child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Material(
+                                      color: Colors.grey,
+                                      child: InkWell(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(2),
+                                          child: SvgPicture.asset('assets/gift.svg'),
+                                        ),
+                                        onTap: () {
+                                          Share.share('aboba (Этот текст отправлен из приложения)');
+                                        },
+                                      ))),
                             ),
                           ),
                         ),
-                      ),
                       Align(
                         alignment: Alignment.bottomRight,
                         child: Padding(

@@ -4,6 +4,7 @@ import 'package:mtc_xackaton/model/category.dart';
 
 import 'package:mtc_xackaton/ui/pages/my_certificates_page/widgets/cerficate_tile.dart';
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
+import 'package:share/share.dart';
 
 import '../../../data/api_provider.dart';
 import '../../../model/certificate.dart';
@@ -61,7 +62,14 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
                                 ? cert.imageLink
                                 : (cert as CertificateMoney).category.imageLink,
                             isShare: true,
-                            onTap: () {},
+                            onTap: () {
+                              String text =
+                                  'Привет! Я тебе отправил сертификат \'${cert.title}\' в приложении \'Мой МТС\': https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+
+                              print(text);
+
+                              Share.share(text);
+                            },
                           ),
                         const SizedBox(height: 20),
                       ],

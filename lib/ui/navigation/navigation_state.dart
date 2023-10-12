@@ -28,6 +28,12 @@ class NavigationStateOrder extends NavigationState {
   const NavigationStateOrder({required this.cert});
 }
 
+class NavigationStateError extends NavigationState {
+  final String error;
+
+  const NavigationStateError({required this.error});
+}
+
 class NavigationStateAcceptGift extends NavigationState {
   final String giftId;
 

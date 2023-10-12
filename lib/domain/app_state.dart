@@ -14,3 +14,9 @@ class AppStateLoaded extends AppState {
 
   const AppStateLoaded({required this.categories, required this.services});
 }
+
+class AppStateError extends AppState {
+  final String error;
+
+  const AppStateError({required this.error});
+}

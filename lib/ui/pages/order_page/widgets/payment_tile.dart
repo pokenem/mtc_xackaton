@@ -13,7 +13,8 @@ class PaymentTile extends StatelessWidget {
 
   void onGoToPay() async {
     final uri = Uri.parse(
-        'https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
+      'https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley',
+    );
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     } else {
@@ -34,19 +35,22 @@ class PaymentTile extends StatelessWidget {
               onGoToPay();
             },
             child: ListTile(
-              title: Text(way,style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 17,
-                fontFamily: 'Arial',
-                height: 16 / 14,
-              ),),
+              title: Text(
+                way,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 17,
+                  fontFamily: 'Arial',
+                  height: 16 / 14,
+                ),
+              ),
               trailing: SizedBox(
                 width: 33,
                 height: 33,
                 child: image,
               ),
               shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Color(0xFFD2D2D2), width: 1),
+                  side: const BorderSide(color: Color(0xFFD2D2D2), width: 1),
                   borderRadius: BorderRadius.circular(8)),
             ),
           ),

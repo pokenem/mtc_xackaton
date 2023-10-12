@@ -23,8 +23,11 @@ class NavMan {
   }
 
   void openCertificateInfoPage(CertificateService cert) {
-    _routerDelegate
-        .setNewRoutePath(NavigationStateCertificateInfo(cert: cert));
+    _routerDelegate.setNewRoutePath(NavigationStateCertificateInfo(cert: cert));
+  }
+
+  void openErrorPage(String error) {
+    _routerDelegate.setNewRoutePath(NavigationStateError(error: error));
   }
 
   void pop() {

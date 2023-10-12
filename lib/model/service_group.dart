@@ -17,5 +17,5 @@ class ServiceGroup {
         name = json['name'],
         services = (json['sub_services'] as Iterable)
             .map<CertificateService>((e) => CertificateService.fromJson(e))
-            .toList() {}
+            .toList();
 }

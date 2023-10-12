@@ -51,7 +51,7 @@ class CertificateService extends Certificate {
         description = json['description'],
         imageLink = json['image'],
         serviceName = '',
-        serviceId = '' {}
+        serviceId = '';
 
   @override
   String get title => name;

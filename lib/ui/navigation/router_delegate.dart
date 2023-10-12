@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mtc_xackaton/ui/pages/certificate_info_page/certificate_info_page.dart';
+import 'package:mtc_xackaton/ui/pages/error_page/error_page.dart';
 import 'package:mtc_xackaton/ui/pages/loading_page/loading_page.dart';
 import 'package:mtc_xackaton/ui/pages/order_page/order_page.dart';
 
@@ -41,10 +42,15 @@ class MyRouterDelegate extends RouterDelegate<NavigationState>
         pages.add(const MainPage());
         pages.add(OrderPage(cert: state.cert));
       } else if (_state is NavigationStateCertificateInfo) {
-        NavigationStateCertificateInfo state = _state as NavigationStateCertificateInfo;
+        NavigationStateCertificateInfo state =
+            _state as NavigationStateCertificateInfo;
 
         pages.add(const MainPage());
         pages.add(CertificateInfoPage(cert: state.cert));
+      } else if (_state is NavigationStateError) {
+        NavigationStateError state = _state as NavigationStateError;
+
+        pages.add(ErrorPage(text: state.error));
       } else {
         pages.add(const MainPage());
       }

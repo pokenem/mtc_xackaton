@@ -87,18 +87,18 @@ class CertificateTile extends StatelessWidget {
                               height: 35,
                               width: 35,
                               child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8),
-                                  child: Material(
-                                      color: Colors.transparent,
-                                      child: InkWell(
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(2),
-                                          child: SvgPicture.asset(Assets.gift),
-                                        ),
-                                        onTap: () {
-                                          Share.share('aboba (Этот текст отправлен из приложения)');
-                                        },
-                                      ))),
+                                borderRadius: BorderRadius.circular(8),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    onTap: onTap,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2),
+                                      child: SvgPicture.asset(Assets.gift),
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -117,13 +117,16 @@ class CertificateTile extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(8),
                                 color: const Color(0xFFBCBCBC),
                               ),
-                              child: Center(child: Text('$cost BYN',
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                                fontFamily: 'Arial',
-                                height: 16 / 14,
-                              ),)),
+                              child: Center(
+                                  child: Text(
+                                '$cost BYN',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  fontFamily: 'Arial',
+                                  height: 16 / 14,
+                                ),
+                              )),
                             ),
                           ),
                         ),

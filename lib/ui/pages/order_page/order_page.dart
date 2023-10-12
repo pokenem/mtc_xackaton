@@ -35,7 +35,7 @@ class OrderPage extends StatelessWidget {
                   ListTile(
                     title: Text(
                       cert.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 17,
                         fontFamily: 'Arial',
@@ -44,7 +44,7 @@ class OrderPage extends StatelessWidget {
                     ),
                     trailing: Text(
                       '${cert.cost} BYN',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: 'Arial',
                         fontSize: 14,
                         fontWeight: FontWeight.w400,

@@ -13,6 +13,8 @@ class LoadingPage extends StatelessWidget {
       listener: (context, state) {
         if (state is AppStateLoaded) {
           GetIt.I.get<NavMan>().openMainPage();
+        } else if (state is AppStateError) {
+          GetIt.I.get<NavMan>().openErrorPage(state.error);
         }
       },
       builder: (context, state) {

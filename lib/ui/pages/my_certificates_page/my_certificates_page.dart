@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:mtc_xackaton/ui/pages/my_certificates_page/widgets/cerficate_tile.dart';
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
 
-class Certificate {
+class CertificateX {
   Image? image;
   int cost;
   String name;
 
-  Certificate({this.image, required this.cost, required this.name});
+  CertificateX({this.image, required this.cost, required this.name});
 }
 
-List<Certificate> ser = [
-  Certificate(cost: 10, name: 'НАЗВАНИЕ'),
-  Certificate(cost: 10, name: 'НАЗВАНИЕ'),
-  Certificate(cost: 10, name: 'НАЗВАНИЕ'),
-  Certificate(cost: 10, name: 'НАЗВАНИЕ'),
+List<CertificateX> ser = [
+  CertificateX(cost: 10, name: 'НАЗВАНИЕ'),
+  CertificateX(cost: 10, name: 'НАЗВАНИЕ'),
+  CertificateX(cost: 10, name: 'НАЗВАНИЕ'),
+  CertificateX(cost: 10, name: 'НАЗВАНИЕ'),
 ];
 
 class MyCertificatesPage extends StatelessWidget {

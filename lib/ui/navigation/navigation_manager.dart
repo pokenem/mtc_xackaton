@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 import '../../model/certificate.dart';
 import 'navigation_state.dart';
 
-class NavigationManager {
+class NavMan {
   final RouterDelegate<NavigationState> _routerDelegate;
 
-  const NavigationManager(
-      {required RouterDelegate<NavigationState> routerDelegate})
-      : _routerDelegate = routerDelegate;
+  const NavMan({
+    required RouterDelegate<NavigationState> routerDelegate,
+  }) : _routerDelegate = routerDelegate;
 
   void openMainPage() {
     _routerDelegate
@@ -21,7 +21,7 @@ class NavigationManager {
 
   void openOrderPage(Certificate certificate) {
     _routerDelegate
-        .setNewRoutePath(NavigationStateOrder(certificate: certificate));
+        .setNewRoutePath(NavigationStateOrder(cert: certificate));
   }
 
   void pop() {

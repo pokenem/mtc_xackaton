@@ -35,8 +35,8 @@ class _TabMoneyState extends State<TabMoney> {
     });
   }
 
-  void onBuy() {
-    GetIt.I.get<NavigationManager>().openOrderPage(
+  void onBuy(BuildContext context) {
+    GetIt.I.get<NavMan>().openOrderPage(
           CertificateMoney(
             groupId: categoryInd.toString(),
             amount: amount.round(),
@@ -87,7 +87,7 @@ class _TabMoneyState extends State<TabMoney> {
                   categories[categoryInd],
                   style: const TextStyle(
                     color: Colors.black,
-                    fontFamily: "Arial",
+                    fontFamily: 'Arial',
                     fontSize: 16,
                   ),
                 ),
@@ -123,10 +123,10 @@ class _TabMoneyState extends State<TabMoney> {
                     const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        "СУММА",
+                        'СУММА',
                         style: TextStyle(
                           color: Colors.black,
-                          fontFamily: "Arial",
+                          fontFamily: 'Arial',
                           fontSize: 16,
                         ),
                       ),
@@ -143,10 +143,10 @@ class _TabMoneyState extends State<TabMoney> {
                         ],
                         textAlign: TextAlign.center,
                         decoration:
-                            const InputDecoration.collapsed(hintText: ""),
+                            const InputDecoration.collapsed(hintText: ''),
                         cursorColor: const Color(0xFFed1d24),
                         style: const TextStyle(
-                          fontFamily: "Arial",
+                          fontFamily: 'Arial',
                           fontWeight: FontWeight.bold,
                           fontSize: 24,
                           color: Colors.black,
@@ -180,15 +180,15 @@ class _TabMoneyState extends State<TabMoney> {
                 child: Material(
                   color: const Color(0xFFed1d24),
                   child: InkWell(
-                    onTap: onBuy,
+                    onTap: () => onBuy(context),
                     child: Container(
                       alignment: Alignment.center,
                       height: 45,
                       child: const Text(
-                        "КУПИТЬ",
+                        'КУПИТЬ',
                         style: TextStyle(
                           color: Colors.white,
-                          fontFamily: "Arial",
+                          fontFamily: 'Arial',
                           fontSize: 16,
                         ),
                       ),

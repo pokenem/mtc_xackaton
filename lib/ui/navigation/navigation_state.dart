@@ -4,6 +4,10 @@ class NavigationState {
   const NavigationState();
 }
 
+class NavigationStateLoading extends NavigationState {
+  const NavigationStateLoading();
+}
+
 enum MainTab { money, service }
 
 class NavigationStateMain extends NavigationState {
@@ -17,15 +21,15 @@ class NavigationStateList extends NavigationState {
 }
 
 class NavigationStateCertificateInfo extends NavigationState {
-  final String certificateId;
+  final String certId;
 
-  const NavigationStateCertificateInfo({required this.certificateId});
+  const NavigationStateCertificateInfo({required this.certId});
 }
 
 class NavigationStateOrder extends NavigationState {
-  final Certificate certificate;
+  final Certificate cert;
 
-  const NavigationStateOrder({required this.certificate});
+  const NavigationStateOrder({required this.cert});
 }
 
 class NavigationStateAcceptGift extends NavigationState {

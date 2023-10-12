@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mtc_xackaton/model/certificate.dart';
 
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
 
 import 'widgets/payment_tile.dart';
 
 class OrderPage extends StatelessWidget {
-  const OrderPage({Key? key}) : super(key: key);
+  final Certificate cert;
+
+  const OrderPage({super.key, required this.cert});
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +47,17 @@ class OrderPage extends StatelessWidget {
                     child: Text('Способ оплаты'),
                   ),
                   PaymentTile(
-                      way: 'Оплата картой',
-                      image: SvgPicture.asset('assets/web_pay.svg')),
+                    way: 'Оплата картой',
+                    image: SvgPicture.asset('assets/web_pay.svg'),
+                  ),
                   PaymentTile(
-                      way: 'Оплата через МТС деньги',
-                      image: SvgPicture.asset('assets/mts_money.svg')),
+                    way: 'Оплата через МТС деньги',
+                    image: SvgPicture.asset('assets/mts_money.svg'),
+                  ),
                   PaymentTile(
-                      way: 'Оплата ЕРИП',
-                      image: SvgPicture.asset('assets/erip_pay.svg')),
+                    way: 'Оплата ЕРИП',
+                    image: SvgPicture.asset('assets/erip_pay.svg'),
+                  ),
                 ],
               ),
             )

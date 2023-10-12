@@ -24,7 +24,7 @@ PreferredSizeWidget createAppBar({
     leading: hasBackButton ? IconButton(
       icon: const Icon(Icons.arrow_back, color: Colors.black),
       onPressed: () {
-        GetIt.I.get<NavigationManager>().pop();
+        GetIt.I.get<NavMan>().pop();
       },
     ) : null,
     actions: [
@@ -39,7 +39,7 @@ PreferredSizeWidget createAppBar({
               child: Material(
                 child: InkWell(
                   onTap: () {
-                    GetIt.I.get<NavigationManager>().openMyCertificatesPage();
+                    GetIt.I.get<NavMan>().openMyCertificatesPage();
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),

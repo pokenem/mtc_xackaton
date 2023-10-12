@@ -25,7 +25,7 @@ class MyRouteInformationParser extends RouteInformationParser<NavigationState> {
       }
     } else if (uri.pathSegments.length == 2) {
       if (uri.pathSegments[0] == 'certificateInfo') {
-        return NavigationStateCertificateInfo(certificateId: uri.pathSegments[1]);
+        return NavigationStateCertificateInfo(certId: uri.pathSegments[1]);
       } else if (uri.pathSegments[0] == 'gift') {
         return NavigationStateAcceptGift(giftId: uri.pathSegments[1]);
       }
@@ -49,7 +49,7 @@ class MyRouteInformationParser extends RouteInformationParser<NavigationState> {
     } else if (configuration is NavigationStateCertificateInfo) {
       NavigationStateCertificateInfo state = configuration;
 
-      return RouteInformation(location: '/certificateInfo/${state.certificateId}');
+      return RouteInformation(location: '/certificateInfo/${state.certId}');
     } else if (configuration is NavigationStateAcceptGift) {
       NavigationStateAcceptGift state = configuration;
 

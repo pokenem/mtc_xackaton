@@ -63,6 +63,8 @@ class _MyCertificatesPageState extends State<MyCertificatesPage> {
                           CertificateTile(
                             title: cert.title,
                             cost: cert.cost,
+                            image: '',
+                            isShare: true,
                             onTap: () {},
                           ),
                       ],

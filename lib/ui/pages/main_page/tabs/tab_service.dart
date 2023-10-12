@@ -9,72 +9,192 @@ var map = <String, dynamic>{
     "_id": "oierhglihfjwdfd",
     "name": "PON PON USLUGA",
     "sub_services": [
-      {"name": "BimBimBamBam", "cost": "150", "description": "OGO!", "image": "LINK"},
-      {"name": "КОНЦЕРТ КИШЛАКА ТУТ", "cost": "300", "description": "OGO!", "image": "LINK"},
-      {"name": "МАРКЕТОЛОГИ ТУТ", "cost": "500", "description": "ДА!!!", "image": "LINK"}
+      {
+        "name": "BimBimBamBam",
+        "cost": "150",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "КОНЦЕРТ КИШЛАКА ТУТ",
+        "cost": "300",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "МАРКЕТОЛОГИ ТУТ",
+        "cost": "500",
+        "description": "ДА!!!",
+        "image": "LINK"
+      }
     ]
   },
   '2': {
     "_id": "oierhglihfjwdfd",
     "name": "PON PON USLUGA NOMER 2",
     "sub_services": [
-      {"name": "BimBimBamBam 2", "cost": "150", "description": "OGO!", "image": "LINK"},
-      {"name": "КОНЦЕРТ КИШЛАКА ТУТ 2", "cost": "300", "description": "OGO!", "image": "LINK"},
-      {"name": "МАРКЕТОЛОГИ ТУТ 2", "cost": "500", "description": "ДА!!!", "image": "LINK"}
+      {
+        "name": "BimBimBamBam 2",
+        "cost": "150",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
+        "cost": "300",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "МАРКЕТОЛОГИ ТУТ 2",
+        "cost": "500",
+        "description": "ДА!!!",
+        "image": "LINK"
+      }
     ]
   },
   '3': {
     "_id": "oierhglihfjwdfd",
     "name": "PON PON USLUGA NOMER 3",
     "sub_services": [
-      {"name": "BimBimBamBam 2", "cost": "150", "description": "OGO!", "image": "LINK"},
-      {"name": "КОНЦЕРТ КИШЛАКА ТУТ 2", "cost": "300", "description": "OGO!", "image": "LINK"},
-      {"name": "МАРКЕТОЛОГИ ТУТ 2", "cost": "500", "description": "ДА!!!", "image": "LINK"}
+      {
+        "name": "BimBimBamBam 2",
+        "cost": "150",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
+        "cost": "300",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "МАРКЕТОЛОГИ ТУТ 2",
+        "cost": "500",
+        "description": "ДА!!!",
+        "image": "LINK"
+      }
     ]
   },
   '4': {
     "_id": "oierhglihfjwdfd",
     "name": "PON PON USLUGA NOMER 4",
     "sub_services": [
-      {"name": "BimBimBamBam 2", "cost": "150", "description": "OGO!", "image": "LINK"},
-      {"name": "КОНЦЕРТ КИШЛАКА ТУТ 2", "cost": "300", "description": "OGO!", "image": "LINK"},
-      {"name": "МАРКЕТОЛОГИ ТУТ 2", "cost": "500", "description": "ДА!!!", "image": "LINK"}
+      {
+        "name": "BimBimBamBam 2",
+        "cost": "150",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
+        "cost": "300",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "МАРКЕТОЛОГИ ТУТ 2",
+        "cost": "500",
+        "description": "ДА!!!",
+        "image": "LINK"
+      }
     ]
   },
   '5': {
     "_id": "oierhglihfjwdfd",
     "name": "PON PON USLUGA NOMER 5",
     "sub_services": [
-      {"name": "BimBimBamBam 2", "cost": "150", "description": "OGO!", "image": "LINK"},
-      {"name": "КОНЦЕРТ КИШЛАКА ТУТ 2", "cost": "300", "description": "OGO!", "image": "LINK"},
-      {"name": "МАРКЕТОЛОГИ ТУТ 2", "cost": "500", "description": "ДА!!!", "image": "LINK"}
+      {
+        "name": "BimBimBamBam 2",
+        "cost": "150",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
+        "cost": "300",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "МАРКЕТОЛОГИ ТУТ 2",
+        "cost": "500",
+        "description": "ДА!!!",
+        "image": "LINK"
+      }
     ]
   },
   '6': {
     "_id": "oierhglihfjwdfd",
     "name": "PON PON USLUGA NOMER 6",
     "sub_services": [
-      {"name": "BimBimBamBam 2", "cost": "150", "description": "OGO!", "image": "LINK"},
-      {"name": "КОНЦЕРТ КИШЛАКА ТУТ 2", "cost": "300", "description": "OGO!", "image": "LINK"},
-      {"name": "МАРКЕТОЛОГИ ТУТ 2", "cost": "500", "description": "ДА!!!", "image": "LINK"}
+      {
+        "name": "BimBimBamBam 2",
+        "cost": "150",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
+        "cost": "300",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "МАРКЕТОЛОГИ ТУТ 2",
+        "cost": "500",
+        "description": "ДА!!!",
+        "image": "LINK"
+      }
     ]
   },
   '7': {
     "_id": "oierhglihfjwdfd",
     "name": "PON PON USLUGA NOMER 7",
     "sub_services": [
-      {"name": "BimBimBamBam 2", "cost": "150", "description": "OGO!", "image": "LINK"},
-      {"name": "КОНЦЕРТ КИШЛАКА ТУТ 2", "cost": "300", "description": "OGO!", "image": "LINK"},
-      {"name": "МАРКЕТОЛОГИ ТУТ 2", "cost": "500", "description": "ДА!!!", "image": "LINK"}
+      {
+        "name": "BimBimBamBam 2",
+        "cost": "150",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
+        "cost": "300",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "МАРКЕТОЛОГИ ТУТ 2",
+        "cost": "500",
+        "description": "ДА!!!",
+        "image": "LINK"
+      }
     ]
   },
   '8': {
     "_id": "oierhglihfjwdfd",
     "name": "PON PON USLUGA NOMER 8",
     "sub_services": [
-      {"name": "BimBimBamBam 2", "cost": "150", "description": "OGO!", "image": "LINK"},
-      {"name": "КОНЦЕРТ КИШЛАКА ТУТ 2", "cost": "300", "description": "OGO!", "image": "LINK"},
-      {"name": "МАРКЕТОЛОГИ ТУТ 2", "cost": "500", "description": "ДА!!!", "image": "LINK"}
+      {
+        "name": "BimBimBamBam 2",
+        "cost": "150",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "КОНЦЕРТ КИШЛАКА ТУТ 2",
+        "cost": "300",
+        "description": "OGO!",
+        "image": "LINK"
+      },
+      {
+        "name": "МАРКЕТОЛОГИ ТУТ 2",
+        "cost": "500",
+        "description": "ДА!!!",
+        "image": "LINK"
+      }
     ]
   },
 };
@@ -95,7 +215,8 @@ class _TabServiceState extends State<TabService> {
   @override
   void initState() {
     _cnt = SingleValueDropDownController();
-    _cnt.dropDownValue = DropDownValueModel(name: map['1']['name'], value: map['1']['sub_services']);
+    _cnt.dropDownValue = DropDownValueModel(
+        name: map['1']['name'], value: map['1']['sub_services']);
     list = listBuilder(map['1']['sub_services']);
     super.initState();
   }
@@ -126,9 +247,7 @@ class _TabServiceState extends State<TabService> {
                     color: Colors.grey,
                   ),
                   child: DropDownTextField(
-                    textStyle: TextStyle(
-
-                    ),
+                    textStyle: TextStyle(),
                     textFieldDecoration: InputDecoration(
                       border: InputBorder.none,
                     ),
@@ -140,7 +259,7 @@ class _TabServiceState extends State<TabService> {
                     dropDownItemCount: 6,
 
                     dropDownList: [
-                      for(final it in map.values)
+                      for (final it in map.values)
                         DropDownValueModel(
                           name: it['name'],
                           value: it['sub_services'],
@@ -155,9 +274,10 @@ class _TabServiceState extends State<TabService> {
               for (dynamic it in list)
                 CertificateTile(
                   cost: it.cost,
-                  name: it.serviceId,
+                  title: it.serviceId,
                   isShare: false,
                   image: 'https://i.imgur.com/0WCT0md.png',
+                  onTap: () {},
                 ),
             ],
           ),
@@ -177,7 +297,10 @@ class _TabServiceState extends State<TabService> {
   List<CertificateService> listBuilder(dynamic services) {
     List<CertificateService> listOfServices = [];
     for (dynamic it in services) {
-      listOfServices.add(CertificateService(cost: int.parse(it['cost']), groupId: 'fdsfsfwf', serviceId: it['name']));
+      listOfServices.add(CertificateService(
+          cost: int.parse(it['cost']),
+          groupId: 'fdsfsfwf',
+          serviceId: it['name']));
     }
     return listOfServices;
   }

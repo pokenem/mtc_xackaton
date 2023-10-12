@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mtc_xackaton/model/certificate.dart';
 import 'package:mtc_xackaton/ui/widgets/app_bar.dart';
 
+import '../../styles/app_color.dart';
+
 class CertificateInfoPage extends StatelessWidget {
   final CertificateService cert;
 
@@ -29,23 +31,28 @@ class CertificateInfoPage extends StatelessWidget {
                   FractionallySizedBox(
                     widthFactor: 1,
                     child: Container(
+                      constraints: BoxConstraints(
+                        minWidth: double.infinity,
+                      ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
-                        color: Colors.grey,
                       ),
-                      height: 250,
+                      child: Image.network(cert.imageLink),
                     ),
                   ),
                   const SizedBox(
                     height: 30,
                   ),
-                  Text(
-                    cert.name,
-                    style: const TextStyle(
-                      fontFamily: 'Arial',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
-                      height: 23 / 20,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10,),
+                    child: Text(
+                      cert.name,
+                      style: const TextStyle(
+                        fontFamily: 'Arial',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                        height: 23 / 20,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -53,31 +60,30 @@ class CertificateInfoPage extends StatelessWidget {
                   ),
                   FractionallySizedBox(
                     widthFactor: 1,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(14),
-                        color: Colors.grey,
-                        border: Border.all(
-                          width: 1,
-                          color: const Color(0xFFD2D2D2),
-                        ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
                       ),
-                      height: 90,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(cert.description),
+                      child: Text(
+                        cert.description,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                          fontFamily: 'Arial',
+                          height: 20 / 16,
+                        ),
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 15,
+                    height: 30,
                   ),
                   FractionallySizedBox(
                     widthFactor: 1,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Material(
-                        color: const Color(0xFFed1d24),
+                        color: AppColor.red,
                         child: InkWell(
                           onTap: () {},
                           child: Container(

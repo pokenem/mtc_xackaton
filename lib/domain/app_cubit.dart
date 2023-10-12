@@ -17,9 +17,9 @@ class AppCubit extends Cubit<AppState> {
     emit(
       const AppStateLoaded(
         categories: [
-          Category(id: '1', name: 'ВСЕ', imageLink: 'xui'),
-          Category(id: '2', name: 'ЧУРКИ', imageLink: 'xui'),
-          Category(id: '3', name: 'БЕБРЫ', imageLink: 'xui'),
+          Category(id: '1', name: 'ВСЕ', imageLink: 'https://i.imgur.com/0WCT0md.png'),
+          Category(id: '2', name: 'ЧУРКИ', imageLink: 'https://i.imgur.com/0WCT0md.png'),
+          Category(id: '3', name: 'БЕБРЫ', imageLink: 'https://i.imgur.com/0WCT0md.png'),
         ],
         services: [
           ServiceGroup(
@@ -30,7 +30,7 @@ class AppCubit extends Cubit<AppState> {
                 name: 'bim bim',
                 description: 'bam bam',
                 cost: 120,
-                imageLink: 'hui',
+                imageLink: 'https://i.imgur.com/0WCT0md.png',
                 serviceName: '',
                 serviceId: '1',
               ),
@@ -44,7 +44,7 @@ class AppCubit extends Cubit<AppState> {
                 name: 'bam bam',
                 description: 'bam bam',
                 cost: 120,
-                imageLink: 'hui',
+                imageLink: 'https://i.imgur.com/0WCT0md.png',
                 serviceName: '',
                 serviceId: '2',
               ),

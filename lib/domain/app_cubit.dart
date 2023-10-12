@@ -25,10 +25,22 @@ class AppCubit extends Cubit<AppState> {
         services: [
           ServiceGroup(
             id: '1',
-            name: '2',
+            name: 'Бебебе',
             services: [
               Service(
                 name: 'bim bim',
+                description: 'bam bam',
+                cost: 120,
+                imageLink: 'hui',
+              ),
+            ],
+          ),
+          ServiceGroup(
+            id: '2',
+            name: 'Бабаба',
+            services: [
+              Service(
+                name: 'bam bam',
                 description: 'bam bam',
                 cost: 120,
                 imageLink: 'hui',

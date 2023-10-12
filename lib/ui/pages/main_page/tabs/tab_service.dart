@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mtc_xackaton/model/service_group.dart';
 import 'package:mtc_xackaton/ui/pages/my_certificates_page/widgets/cerficate_tile.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 
+import '../../../../domain/app_cubit.dart';
 import '../../../../model/certificate.dart';
-
+import '../../../../model/service.dart';
+/*
 var map = <String, dynamic>{
   '1': {
     "_id": "oierhglihfjwdfd",
@@ -197,27 +201,23 @@ var map = <String, dynamic>{
       }
     ]
   },
-};
+};*/
 
 class TabService extends StatefulWidget {
-  const TabService({Key? key}) : super(key: key);
+  const TabService({super.key});
 
   @override
   State<TabService> createState() => _TabServiceState();
 }
 
 class _TabServiceState extends State<TabService> {
-  List<String> listser = ['fsdfdfsfd', 'fdsfsdfee', '4324324233432'];
-  String? selectedItem;
-  List<CertificateService> list = [];
+  DropDownValueModel? selectedItem;
   late SingleValueDropDownController _cnt;
 
   @override
   void initState() {
     _cnt = SingleValueDropDownController();
-    _cnt.dropDownValue = DropDownValueModel(
-        name: map['1']['name'], value: map['1']['sub_services']);
-    list = listBuilder(map['1']['sub_services']);
+
     super.initState();
   }
 
@@ -229,68 +229,82 @@ class _TabServiceState extends State<TabService> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 20,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FractionallySizedBox(
-                widthFactor: 1,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Colors.grey,
-                  ),
-                  child: DropDownTextField(
-                    textStyle: TextStyle(),
-                    textFieldDecoration: InputDecoration(
-                      border: InputBorder.none,
-                    ),
-                    controller: _cnt,
-                    clearOption: false,
+    return BlocBuilder<AppCubit, AppState>(
+      builder: (context, s) {
+        AppStateLoaded state = s as AppStateLoaded;
 
-                    // enableSearch: true,
-                    // dropdownColor: Colors.green,
-                    dropDownItemCount: 6,
+        if (selectedItem == null) {
+          _cnt.dropDownValue = DropDownValueModel(
+            name: state.services[0].name,
+            value: state.services[0].services,
+          );
+          selectedItem = _cnt.dropDownValue;
+        }
 
-                    dropDownList: [
-                      for (final it in map.values)
-                        DropDownValueModel(
-                          name: it['name'],
-                          value: it['sub_services'],
-                        )
-                    ],
-                    onChanged: (val) {
-                      onChangedDropDown(val);
-                    },
-                  ),
-                ),
+        return ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 20,
               ),
-              for (dynamic it in list)
-                CertificateTile(
-                  cost: it.cost,
-                  title: it.serviceId,
-                  isShare: false,
-                  image: 'https://i.imgur.com/0WCT0md.png',
-                  onTap: () {},
-                ),
-            ],
-          ),
-        ),
-      ],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  FractionallySizedBox(
+                    widthFactor: 1,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        color: Colors.grey,
+                      ),
+                      child: DropDownTextField(
+                        textStyle: const TextStyle(),
+                        textFieldDecoration: const InputDecoration(
+                          border: InputBorder.none,
+                        ),
+                        controller: _cnt,
+                        clearOption: false,
+
+                        // enableSearch: true,
+                        // dropdownColor: Colors.green,
+                        dropDownItemCount: 6,
+
+                        dropDownList: [
+                          for (ServiceGroup sg in state.services)
+                            DropDownValueModel(
+                              name: sg.name,
+                              value: sg.services,
+                            )
+                        ],
+                        onChanged: (val) {
+                          onChangedDropDown(val);
+                        },
+                      ),
+                    ),
+                  ),
+                  for (Service service in selectedItem!.value)
+                    CertificateTile(
+                      cost: service.cost,
+                      title: service.name,
+                      isShare: false,
+                      image: 'https://i.imgur.com/0WCT0md.png',
+                      onTap: () {},
+                    ),
+                ],
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 
   void onChangedDropDown(DropDownValueModel item) {
     setState(() {
-      selectedItem = item.name;
-      list = listBuilder(item.value);
-      print(list);
+      selectedItem = item;
+      // list = listBuilder(item.value);
+      // print(list);
     });
   }
 
